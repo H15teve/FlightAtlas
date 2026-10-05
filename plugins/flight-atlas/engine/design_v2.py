@@ -205,6 +205,21 @@ def wordcloud(g,rank,x,y,w,h):
                 if any(box[0]<b[2] and box[2]>b[0] and box[1]<b[3] and box[3]>b[1] for b in boxes):continue
                 chosen=(cx,cy,box);break
             if chosen:break
+        if not chosen:
+            # The spiral has a fixed radius. Wider fonts can fill that area
+            # while leaving usable space elsewhere in a growing panel.
+            half_w=tw/2+8;half_h=th/2+8
+            xs={x+half_w,x+w-half_w};ys={y+half_h,y+h-half_h}
+            for b in boxes:
+                xs.update((b[0]-half_w,b[2]+half_w))
+                ys.update((b[1]-half_h,b[3]+half_h))
+            candidates=sorted(((cx,cy) for cx in xs for cy in ys
+                if x+half_w<=cx<=x+w-half_w and y+half_h<=cy<=y+h-half_h),
+                key=lambda p:((p[0]-x-w/2)**2+(p[1]-y-h/2)**2,p[1],p[0]))
+            for cx,cy in candidates:
+                box=(cx-half_w,cy-half_h,cx+half_w,cy+half_h)
+                if any(box[0]<b[2] and box[2]>b[0] and box[1]<b[3] and box[3]>b[1] for b in boxes):continue
+                chosen=(cx,cy,box);break
         if not chosen:raise ValueError('词云空间不足：'+name)
         cx,cy,box=chosen;boxes.append(box);color=[NAVY,BLUE,TEAL,GOLD,PURPLE][i%5]
         draw.append((cx,cy,color,name,size,angle))

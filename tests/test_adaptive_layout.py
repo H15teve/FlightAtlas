@@ -36,6 +36,26 @@ def test_airport_panel_grows_only_as_needed_and_keeps_v3_words():
         for p in panel['placements']:
             assert p['font_size']==round(35*math.log2(p['visits']+1))
             assert p['box'][1]>=0 and p['box'][3]<=panel['height']
-    assert panels[0]['height']<900
+    # DejaVu's wider glyphs need slightly more room than Windows Arial.
+    assert panels[0]['height']<1000
     assert panels[0]['height']<panels[1]['height']<panels[2]['height']
     assert panels[0]['code_size']>panels[2]['code_size']
+
+def test_airport_panel_uses_space_beyond_spiral_with_wider_font(monkeypatch):
+    import design_v2
+    original=design_v2.ImageFont.truetype
+    class WiderFont:
+        def __init__(self,*args,**kwargs):self.base=original(*args,**kwargs)
+        def getbbox(self,text):
+            left,top,right,bottom=self.base.getbbox(text)
+            return left,top,left+(right-left)*1.25,bottom
+    monkeypatch.setattr(design_v2.ImageFont,'truetype',WiderFont)
+    rank=[(f'A{i:02d}',max(1,120//(i+1))) for i in range(60)]
+    panel=airport_panel(rank,[entry for entry in rank if entry[1]>=3])
+    assert len(panel['placements'])==60
+    for i,p in enumerate(panel['placements']):
+        assert p['font_size']==round(35*math.log2(p['visits']+1))
+        a=p['box'];assert 1190<=a[0]<a[2]<=2300 and 0<=a[1]<a[3]<=panel['height']
+        for q in panel['placements'][:i]:
+            b=q['box']
+            assert not (a[0]<b[2] and a[2]>b[0] and a[1]<b[3] and a[3]>b[1])
