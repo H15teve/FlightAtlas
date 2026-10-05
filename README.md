@@ -18,16 +18,14 @@
 
 <table>
   <tr>
-    <td width="66%" valign="top" align="center"><strong>MY FLIGHT PASSPORT</strong><br><a href="plugins/flight-atlas/docs/previews/flight-passport.png"><img src="plugins/flight-atlas/docs/previews/flight-passport.png" alt="随机化演示的飞行护照：世界航线、圆形国旗、护照字段及累计飞行统计" width="100%"></a></td>
-    <td width="34%" valign="top" align="center"><strong>FLIGHT ATLAS</strong><br><a href="plugins/flight-atlas/docs/previews/flight-atlas.png"><img src="plugins/flight-atlas/docs/previews/flight-atlas.png" alt="随机化演示的飞行统计图：按代表机型长度缩放的剪影、航司与联盟、国内航线、机场柱图与词云、重复和退出客运飞机卡片" width="100%"></a></td>
+    <td width="66%" valign="top" align="center"><strong>MY FLIGHT PASSPORT</strong><br><a href="plugins/flight-atlas/docs/previews/flight-passport.png"><img src="plugins/flight-atlas/docs/previews/flight-passport.png" alt="随机化演示的飞行护照：世界航线、圆形国旗、护照字段及累计飞行统计" height="600"></a></td>
+    <td width="34%" valign="top" align="center"><strong>FLIGHT ATLAS</strong><br><a href="plugins/flight-atlas/docs/previews/flight-atlas.png"><img src="plugins/flight-atlas/docs/previews/flight-atlas.png" alt="随机化演示的飞行统计图：按代表机型长度缩放的剪影、航司与联盟、国内航线、机场柱图与词云、重复和退出客运飞机卡片" height="600"></a></td>
   </tr>
 </table>
 
 点击图片查看大图。示例为重新随机化的240次演示飞行，统计阈值 ≥4，两个飞机卡片栏目均开启；不是作者的真实行程。照片用于演示卡片布局，不对应图中的虚构注册号和状态。图片[素材来源及许可](plugins/flight-atlas/docs/previews/provenance.json)单独记录。
 
 示例飞机照片：Aeroprints.com / CC BY-SA 3.0；两张合成效果图：CC BY-SA 4.0。品牌标志用于识别航司与联盟，不表示合作或背书。
-
-公开 DEMO 的国航使用无汉字的 AIR CHINA 标志，这是示例的特例；生成用户报告时，中国大陆航司仍优先选用含中文名称的完整 LOGO。
 
 ## 快速开始
 
