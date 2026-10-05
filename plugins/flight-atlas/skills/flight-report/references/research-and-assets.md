@@ -65,8 +65,15 @@ Match the historical brand when appropriate; do not confuse former
 Montenegro Airlines with Air Montenegro. The template case uses proportionate
 full wordmarks for XiamenAir, Shenzhen Airlines, Shandong Airlines, JAL and China
 United; avoid tail-only art where the full mark is available. Both height and
-width constrain scaling, with centered content. Review the actual preview, not
-just the filename; verify no half-logo crop or unbalanced blank margins.
+width constrain scaling. Center and scale the actual artwork bounds, excluding
+outer transparent/empty margins from the source canvas. Raster assets use visible
+alpha bounds; SVG assets need a viewBox fitted to the complete artwork, with
+excess outer whitespace corrected before adoption. Preserve aspect ratio,
+internal spacing and a small symmetric safety margin. This rule applies equally
+to configured private assets and built-in assets, without airline-specific
+offsets. Review the actual preview, not just the filename; verify artwork
+centering and displayed size in both bar rows and the logo grid, with no
+half-logo crop or unbalanced blank margins.
 
 Present candidate preview/source/license before adoption. Do not call a file
 "licensed for redistribution" merely because a logo website allows downloads.

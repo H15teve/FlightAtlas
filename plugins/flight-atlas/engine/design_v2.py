@@ -28,6 +28,18 @@ def uri(path):
     return CACHE[path]
 def img(g,path,x,y,w,h,aspect='xMidYMid meet'):
     g.add(f'<image href="{uri(path)}" x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="{aspect}"/>')
+def raster_airline_logo(g,path,x,y,w,h,limit):
+    key=('logo_bounds',Path(path))
+    if key not in CACHE:
+        with Image.open(path) as source:
+            iw,ih=source.size
+            alpha=source.convert('RGBA').getchannel('A').point(lambda a:255 if a>10 else 0)
+            bounds=alpha.getbbox()
+            if bounds is None:raise ValueError('航司LOGO没有可见图案：'+str(path))
+        CACHE[key]=(iw,ih,bounds)
+    iw,ih,(left,top,right,bottom)=CACHE[key]
+    pad=2;bw=right-left+2*pad;bh=bottom-top+2*pad;scale=min(limit/bh,w/bw)
+    g.add(f'<svg x="{x+(w-bw*scale)/2}" y="{y+(h-bh*scale)/2}" width="{bw*scale}" height="{bh*scale}" viewBox="{left-pad} {top-pad} {bw} {bh}" preserveAspectRatio="xMidYMid meet"><image href="{uri(path)}" x="0" y="0" width="{iw}" height="{ih}"/></svg>')
 def airline_logo(g,code,x,y,w,h):
     local=CACHE.get('logos',{}).get(code)
     if local:
@@ -39,7 +51,9 @@ def airline_logo(g,code,x,y,w,h):
             if box:bw,bh=list(map(float,box.replace(',',' ').split()))[2:]
             else:bw,bh=[float(re.match(r'[0-9.]+',root.get(k,'1')).group()) for k in ['width','height']]
         else:
-            with Image.open(path) as source:bw,bh=source.size
+            raster_airline_logo(g,path,x,y,w,h,limit)
+            g.parts[-1]=g.parts[-1].replace('>',f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}">',1)
+            return
         scale=min(limit/bh,w/bw)
         img(g,path,x+(w-bw*scale)/2,y+(h-bh*scale)/2,bw*scale,bh*scale)
         g.parts[-1]=g.parts[-1].replace('/>',f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}"/>',1)
@@ -61,12 +75,7 @@ def airline_logo(g,code,x,y,w,h):
         scale=min(limit/bh,w/bw)
         img(g,wikipedia,x+(w-bw*scale)/2,y+(h-bh*scale)/2,bw*scale,bh*scale)
     else:
-        with Image.open(path) as source:
-            iw,ih=source.size
-            alpha=source.convert('RGBA').getchannel('A').point(lambda a:255 if a>10 else 0)
-            left,top,right,bottom=alpha.getbbox()
-        pad=2;bw=right-left+2*pad;bh=bottom-top+2*pad;scale=min(limit/bh,w/bw)
-        g.add(f'<svg x="{x+(w-bw*scale)/2}" y="{y+(h-bh*scale)/2}" width="{bw*scale}" height="{bh*scale}" viewBox="{left-pad} {top-pad} {bw} {bh}" preserveAspectRatio="xMidYMid meet"><image href="{uri(path)}" x="0" y="0" width="{iw}" height="{ih}"/></svg>')
+        raster_airline_logo(g,path,x,y,w,h,limit)
     closing='/>' if g.parts[-1].startswith('<image ') else '>'
     g.parts[-1]=g.parts[-1].replace(closing,f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}"'+closing,1)
 def alliance_logo(g,name,x,y,w,h):
