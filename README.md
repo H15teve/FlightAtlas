@@ -6,7 +6,7 @@
   <a href="#快速开始">快速开始</a> ·
   <a href="#可以调整什么">可选设置</a> ·
   <a href="plugins/flight-atlas/docs/data-extraction.md">数据提取教程</a> ·
-  <a href="https://www.github.com/h15teve/FlightAtlas">GitHub</a>
+  <a href="https://github.com/H15teve/FlightAtlas">GitHub</a>
 </p>
 
 ## 报告效果
@@ -33,7 +33,7 @@
 
 把下面这句话发给 Codex：
 
-> 请安装 https://www.github.com/h15teve/FlightAtlas 中的 FlightAtlas 插件，并检查 flight-report 技能可以使用。
+> 请安装 https://github.com/H15teve/FlightAtlas 中的 FlightAtlas 插件，并检查 flight-report 技能可以使用。
 
 根据 Codex 提示完成安装确认，必要时重新打开会话。
 
