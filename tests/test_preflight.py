@@ -27,3 +27,16 @@ def test_export_first_queries_only_missing_pairs(tmp_path):
         apply_mileage([{'row':1,'_dep':'PEK','_arr':'XMN','distance':'—'}],'export-then-tpm')
     with pytest.raises(ValueError,match='原导出里程'):
         apply_mileage([{'row':1,'distance':'bad'}],'export-then-tpm',cache)
+
+
+def test_preflight_uses_accepted_enrichment_and_reports_card_age_gap(tmp_path):
+    p=tmp_path/'repeated.csv'
+    p.write_text('date,flight,origin,destination,distance,registration,model\n2025-01-02,CA1001,PEK,CAN,1700,B-DEMO,B738\n2025-01-03,CA1001,PEK,CAN,1700,B-DEMO,B738\n',encoding='utf-8')
+    fact={'registration':'B-DEMO','msn':'123','from':'2025-01-01','through':'2025-12-31','source':'synthetic registry','user_verified':True}
+    result=assess(p,{'age_as_of':'2026-10-06','aircraft_details':[fact]})
+    assert result['missing_field_counts']['msn']==0
+    assert result['aircraft_coverage']['age_coverage']['selected_cards_missing_age']==['B-DEMO']
+    fact.update(delivery_date='2019-07-01',delivery_source='synthetic delivery record')
+    result=assess(p,{'age_as_of':'2026-10-06','aircraft_details':[fact]})
+    assert result['missing_field_counts']['delivery']==0
+    assert result['aircraft_coverage']['age_coverage']['selected_cards_with_age']==1

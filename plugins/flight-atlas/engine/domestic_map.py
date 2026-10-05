@@ -24,7 +24,7 @@ def build_map(data,out,height=1200,route_min=3):
     for pair,n in directional.items():routes[tuple(sorted(pair))]+=n;visits.update({a:n for a in pair})
     geo=Geo(init_opts=opts.InitOpts(width='1460px',height=f'{height}px',renderer='svg',bg_color='#f8f5ec'))
     geo.add_schema(maptype='china',is_roam=False,itemstyle_opts=opts.ItemStyleOpts(color='#dce8e1',border_color='#99bab2',border_width=.65),label_opts=opts.LabelOpts(is_show=False))
-    geo.options['geo'].update({'left':15,'right':15,'top':15,'bottom':15,'boundingCoords':[[73,54],[136,17.5]],'silent':True})
+    geo.options['geo'].update({'layoutCenter':['50%','50%'],'layoutSize':min(1430,height-30),'aspectScale':.75,'boundingCoords':[[73,54],[136,17.5]],'silent':True})
     for a,p in data['airports'].items():geo.add_coordinate(a,p['lon'],p['lat'])
     for pair,n in routes.items():geo.add('routes',[pair],type_=ChartType.LINES,symbol=['none','none'],effect_opts=opts.EffectOpts(is_show=False),linestyle_opts=opts.LineStyleOpts(color='#c5683a',width=1.1+math.log1p(n)*.8,opacity=.65,curve=.16),label_opts=opts.LabelOpts(is_show=False))
     geo.add('airports',list(visits.items()),type_=ChartType.SCATTER,symbol_size=6,color='#b95339',label_opts=opts.LabelOpts(is_show=False),itemstyle_opts=opts.ItemStyleOpts(border_color='#fffdf7',border_width=1))
@@ -33,7 +33,7 @@ def build_map(data,out,height=1200,route_min=3):
     (out/'map_layout.json').write_text(json.dumps({'width':1460,'height':height,'route_min':route_min,'frequent_routes':frequent,'top_flight_numbers':top_flights,'flight_number_scope':'all exported records','flight_ranking_y':flight_ranking_y,'ranking_box':[50,35,430,ranking_bottom]}),encoding='utf-8')
     inset=Geo(init_opts=opts.InitOpts(width='220px',height='320px',renderer='svg',bg_color='#f8f5ec'))
     inset.add_schema(maptype='china',is_roam=False,itemstyle_opts=opts.ItemStyleOpts(color='#e2eee7',border_color='#739b91',border_width=1),label_opts=opts.LabelOpts(is_show=False))
-    inset.options['geo'].update({'left':8,'right':8,'top':8,'bottom':8,'boundingCoords':[[105,26],[126,2.5]],'silent':True})
+    inset.options['geo'].update({'layoutCenter':['50%','50%'],'layoutSize':204,'aspectScale':.75,'boundingCoords':[[105,26],[126,2.5]],'silent':True})
     inset.set_global_opts(legend_opts=opts.LegendOpts(is_show=False));inset.options['animation']=False
     (out/'南海诸岛_pyecharts.json').write_text(inset.dump_options(),encoding='utf-8')
     return {'map_library':'pyecharts / ECharts SVG SSR','source':'https://assets.pyecharts.org/assets/maps/china.js','domestic_route_count':len(routes),'frequent_routes':frequent,'route_min':route_min,'top_flight_numbers':top_flights,'flight_number_scope':'all exported records','height':height,'airport_count':len(visits),'boundary_review':'contains Taiwan, maritime geometry and South China Sea inset; not a certified standard map'}

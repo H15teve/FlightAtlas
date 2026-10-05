@@ -59,3 +59,42 @@ def test_airport_panel_uses_space_beyond_spiral_with_wider_font(monkeypatch):
         for q in panel['placements'][:i]:
             b=q['box']
             assert not (a[0]<b[2] and a[2]>b[0] and a[1]<b[3] and a[3]>b[1])
+
+
+@pytest.mark.parametrize('name', ['Alex Morgan', 'ALEX MORGAN', 'A very long passenger signature'])
+def test_signature_uses_measured_ink_and_separate_title_box(name):
+    from build import SVG
+    from design_v2 import passport_signature
+    from xml.etree import ElementTree as ET
+    drawing=SVG(1600,2200);layout=passport_signature(drawing,name)
+    root=ET.fromstring(''.join(drawing.parts)+'</svg>')
+    ns={'s':'http://www.w3.org/2000/svg'}
+    signature=root.find('s:svg[@data-passport-signature="true"]',ns)
+    assert signature.find('s:text',ns).text==name
+    assert float(signature.get('x'))>=1065
+    assert float(signature.get('x'))+float(signature.get('width'))<=1535
+    assert signature.get('preserveAspectRatio')=='xMidYMid meet'
+    view=list(map(float,signature.get('viewBox').split()));ink=layout['ink_bounds']
+    assert view[0]<ink[0] and view[1]<ink[1]
+    assert view[0]+view[2]>ink[2] and view[1]+view[3]>ink[3]
+
+
+def test_tall_airline_columns_do_not_change_map_geographic_aspect(tmp_path):
+    import json,subprocess
+    from domestic_map import build_map
+    from build import BASE
+    airports={'PEK':{'country':'CN','lon':116.4,'lat':40.1},
+              'CAN':{'country':'CN','lon':113.3,'lat':23.4}}
+    data={'airports':airports,'rows':[{'_dep':'PEK','_arr':'CAN','C':'DEMO001'}]}
+    aspects=[]
+    for height in [1200,2200]:
+        directory=tmp_path/str(height);directory.mkdir()
+        build_map(data,directory,height=height)
+        import os
+        node=os.environ.get('FLIGHT_ATLAS_TEST_NODE','node')
+        subprocess.run([node,str(BASE/'engine/render_map.mjs'),str(directory)],check=True,timeout=120)
+        geometry=json.loads((directory/'机场标签核验.json').read_text(encoding='utf-8'))['geometry']
+        rect=geometry['geo_view_rect'];aspects.append(rect['width']/rect['height'])
+        assert geometry['proportional_layout']
+    assert aspects[0]==pytest.approx(aspects[1],abs=1e-9)
+    assert aspects[0]==pytest.approx(63/36.5*.75)

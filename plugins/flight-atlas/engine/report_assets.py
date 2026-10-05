@@ -38,5 +38,5 @@ def apply_aircraft_details(rows,config):
                 value=date_text(fact['delivery_date']);dt.date.fromisoformat(value)
                 if row.get('delivery') and row['delivery']!=value:raise ValueError('飞机补充交付日期与原表冲突')
                 row['delivery']=value
-            audit.append({'row':row['row'],'registration':reg,'msn':row['msn'],'source':fact['source'],'user_verified':True})
+            audit.append({'row':row['row'],'registration':reg,'msn':row['msn'],'source':fact['source'],'user_verified':True,'delivery_date':row.get('delivery') or None,'delivery_date_range':fact.get('delivery_date_range'),'delivery_source':fact.get('delivery_source') or (fact['source'] if fact.get('delivery_date') else None)})
     return audit

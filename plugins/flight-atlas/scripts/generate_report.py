@@ -34,7 +34,7 @@ def run(args):
         if not isinstance(config,dict):raise ValueError('配置必须是JSON对象')
     today=config.get('report_date',dt.date.today().isoformat());dt.date.fromisoformat(today)
     c={'title':'MY FLIGHT PASSPORT','name':'','valid_until':today,'age_as_of':today,'duration_policy':'actual-then-scheduled','report_kind':'final','include_repeated':True,'include_retired':False,'bar_min':3,'repeat_min':2,'png_scale':1.5,'node':'node',**config}
-    for key in ['distance_source','bar_min','airport_bar_min','airline_bar_min','route_min','include_repeated','include_retired','name','place_of_birth','place_of_issue','node']:
+    for key in ['distance_source','bar_min','airport_bar_min','airline_bar_min','route_min','include_repeated','include_retired','name','signature_name','place_of_birth','place_of_issue','node']:
         value=getattr(args,key,None)
         if value is not None:c[key]=value
     c['valid_until']=today
@@ -49,7 +49,8 @@ def run(args):
     if c.get('duration_policy','complete') not in ['complete','actual-only','actual-then-scheduled']:raise ValueError('duration_policy必须为complete、actual-only或actual-then-scheduled')
     if c['repeat_min']<2:raise ValueError('重复乘坐阈值至少为2')
     for k in ['valid_until','age_as_of']:dt.date.fromisoformat(c[k])
-    if len(c['name'])>32:raise ValueError('签名姓名最多32字符')
+    if not isinstance(c['name'],str) or len(c['name'])>32:raise ValueError('身份姓名必须是至多32字符的字符串')
+    if 'signature_name' in c and not isinstance(c['signature_name'],str):raise ValueError('signature_name必须是字符串；大小写按用户输入保留')
     if c['report_kind'] not in ['final','diagnostic']:raise ValueError('report_kind必须为final或diagnostic')
     if not 0.5<=float(c['png_scale'])<=3:raise ValueError('png_scale超出0.5至3范围')
     for k in ['logos','alliance_logos']:c[k]={name:_local_asset(p,base,True) for name,p in c.get(k,{}).items()}
@@ -96,6 +97,8 @@ def run(args):
     s['data_policies']={k:c.get(k) for k in ['duration_policy','infer_airline_from_flight_number','flight_numbers_are_operating']}
     s['options']={k:c.get(k) for k in ['include_repeated','include_retired','bar_min','airport_bar_min','airline_bar_min','route_min']}
     s['notices']=['原始工作簿未修改。','内置联盟图标按单独许可分发；航司LOGO和照片仅按用户确认的来源与权利使用。','中国底图非带审图号标准地图；公开印刷需核验地图要求。']
+    missing_ages=s['airframe_cards']['age_coverage']['selected_cards_missing_age']
+    if missing_ages:s['notices'].append('机体状态核验不代表机龄完整；所选卡片缺交付依据：'+', '.join(missing_ages))
     if c['report_kind']=='diagnostic':s['notices'].append('诊断预览，不是正式成品；尚缺素材：'+str(len(missing_assets)))
     if not s['duration']['complete']:s['notices'].append('仅累计已提供的实际飞行时长，未计入缺失航段；不是全部飞行的完整时长。' if s['duration'].get('display_available_sum') else '起降时刻不足以累计全部飞行时长，护照显示—；请补duration_minutes或有来源的duration_estimates。')
     if s['duration']['estimated_segments']:s['notices'].append(str(s['duration']['estimated_segments'])+'个航段使用明确提供的表定时长估计，不是历史实际时长。')
@@ -113,7 +116,7 @@ def parser():
     p.add_argument('--input',required=True);p.add_argument('--output',required=True);p.add_argument('--config');p.add_argument('--distance-source',choices=['export','tpm','export-then-tpm']);p.add_argument('--tpm-cache');p.add_argument('--online-tpm',action='store_true',help='Only city pairs are sent to public JAL calculator, never rows or passenger data')
     for k in ['bar-min','airport-bar-min','airline-bar-min','route-min']:p.add_argument('--'+k,type=int)
     for k in ['include-repeated','include-retired']:p.add_argument('--'+k,action=argparse.BooleanOptionalAction,default=None)
-    for k in ['name','place-of-birth','place-of-issue','node']:p.add_argument('--'+k)
+    for k in ['name','signature-name','place-of-birth','place-of-issue','node']:p.add_argument('--'+k)
     p.add_argument('--svg-only',action='store_true');p.add_argument('--overwrite',action='store_true')
     return p
 if __name__=='__main__':

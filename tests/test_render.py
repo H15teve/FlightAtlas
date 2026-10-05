@@ -90,7 +90,7 @@ def test_airline_quantity_layout_in_rendered_svg(tmp_path,bar_count,single_count
     svg=ET.parse(out/'02_FLIGHT_ATLAS.svg')
     bars=svg.findall('.//s:rect[@data-airline-bar-index]',NS)
     labels=svg.findall('.//s:text[@data-airline-count-index]',NS)
-    logos=svg.findall('.//s:image[@data-airline-logo]',NS)
+    logos=[element for element in svg.getroot().iter() if element.get('data-airline-logo')]
     assert len(bars)==len(labels)==bar_count
     assert len(logos)==bar_count+single_count
     for bar,label in zip(bars,labels):
@@ -101,6 +101,16 @@ def test_airline_quantity_layout_in_rendered_svg(tmp_path,bar_count,single_count
         assert float(logo.get('height'))<=float(logo.get('data-max-height'))+.01
     if bar_count and single_count:
         assert float(logos[bar_count].get('y'))>float(logos[bar_count-1].get('y'))+float(logos[bar_count-1].get('height'))+30
+
+
+@pytest.mark.parametrize('signature',['ALL UPPERCASE SIGNATURE','A VERY LONG UPPERCASE SIGNATURE THAT MUST FIT THE SAME BOX'])
+def test_uppercase_signature_is_allowed_and_preserved_in_cli(tmp_path,signature):
+    s=execute(BASE/'examples/sample.csv',tmp_path/'report','--svg-only','--signature-name',signature)
+    layout=s['passport_layout']
+    assert layout['signature']==signature
+    assert layout['signature_layout']['text']==signature
+    assert layout['signature_layout']['proportional_fit']
+    assert layout['signature_box']==[1065,1226,470,112]
 
 def test_native_csv_unknown_carriers_and_partial_duration(tmp_path):
     source=tmp_path/'synthetic.csv'

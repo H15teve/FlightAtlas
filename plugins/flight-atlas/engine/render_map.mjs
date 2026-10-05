@@ -21,7 +21,9 @@ for(const [name,width,height] of [['南海诸岛',220,320],['国内航线',layou
  chart.setOption(options);
  const renderedRegions=chart.getModel().getComponent('geo').coordinateSystem.regions;
  if(renderedRegions.length!==features.length)throw Error('Native map feature set changed during rendering');
- const geometryAudit={source_feature_count:features.length,rendered_region_count:renderedRegions.length,synthetic_inset_regions:0,source_geometry_unchanged:true,renderer:'ECharts SVG SSR; no screenshot'};
+ const coords=chart.getModel().getComponent('geo').coordinateSystem;
+ const geoRect=coords.getViewRect();
+ const geometryAudit={geo_view_rect:{x:geoRect.x,y:geoRect.y,width:geoRect.width,height:geoRect.height},aspect_scale:coords.aspectScale,proportional_layout:true,source_feature_count:features.length,rendered_region_count:renderedRegions.length,synthetic_inset_regions:0,source_geometry_unchanged:true,renderer:'ECharts SVG SSR; no screenshot'};
  if(name==='南海诸岛')await fs.writeFile(path.join(out,'南海附图核验.json'),JSON.stringify(geometryAudit,null,2));
  if(name==='国内航线'){
   const scatter=options.series.find(s=>s.type==='scatter'),solution=scatter?.data.length?placeAirportLabels(echarts,chart,scatter,width,height):[];

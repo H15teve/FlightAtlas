@@ -12,6 +12,28 @@ AIRLINES={**AIRLINE_SEED,'全日空':'NH','中国联合':'KN'}
 AIRLINES.update({'中国联合航空':'KN','全日空航空':'NH'})
 CACHE={}
 
+def passport_signature(g, name, box=(1065, 1226, 470, 112)):
+    """Fit the measured ink bounds in a separate title-right box."""
+    roots = [Path(os.environ.get('WINDIR', 'C:/Windows')) / 'Fonts',
+             Path('/usr/share/fonts/truetype/urw-base35')]
+    choices = [('VIVALDII.TTF', 'Vivaldi'), ('segoesc.ttf', 'Segoe Script'),
+               ('Z003-MediumItalic.otf', 'Z003')]
+    selected = next(((root / filename, family) for filename, family in choices
+                     for root in roots if (root / filename).is_file()),
+                    (Path(font_path(latin=True)), 'Arial'))
+    face = ImageFont.truetype(str(selected[0]), 96)
+    left, top, right, bottom = face.getbbox(name, anchor='ls')
+    pad = 8
+    width, height = max(1, right-left)+2*pad, max(1, bottom-top)+2*pad
+    x, y, w, h = box
+    g.add(f'<svg data-passport-signature="true" x="{x}" y="{y}" width="{w}" height="{h}" '
+          f'viewBox="{left-pad} {top-pad} {width} {height}" preserveAspectRatio="xMidYMid meet">'
+          f'<text x="0" y="0" font-family="{selected[1]}" font-size="96" fill="#122478">'
+          f'{escape(name)}</text></svg>')
+    return {'text': name, 'box': list(box), 'font': selected[1],
+            'ink_bounds': [left, top, right, bottom], 'proportional_fit': True}
+
+
 def iata_metrics(name,size,weight=600,font=FONT):
     f=ImageFont.truetype(font_path(weight>=600,font.startswith('Arial')),size)
     return f.getlength(name),[f.getlength(name[:i]) for i in range(3)]
@@ -31,11 +53,15 @@ def img(g,path,x,y,w,h,aspect='xMidYMid meet'):
 def raster_airline_logo(g,path,x,y,w,h,limit):
     key=('logo_bounds',Path(path))
     if key not in CACHE:
-        with Image.open(path) as source:
-            iw,ih=source.size
-            alpha=source.convert('RGBA').getchannel('A').point(lambda a:255 if a>10 else 0)
-            bounds=alpha.getbbox()
-            if bounds is None:raise ValueError('航司LOGO没有可见图案：'+str(path))
+        if Path(path).suffix.lower()=='.svg':
+            result=subprocess.run([CACHE.get('logo_node',os.environ.get('FLIGHT_ATLAS_TEST_NODE','node')),str(BASE/'engine/logo_bounds.mjs'),str(path)],capture_output=True,text=True,encoding='utf-8',check=True,timeout=30)
+            measured=json.loads(result.stdout);iw,ih,bounds=measured['width'],measured['height'],measured['bounds']
+        else:
+            with Image.open(path) as source:
+                iw,ih=source.size
+                alpha=source.convert('RGBA').getchannel('A').point(lambda a:255 if a>10 else 0)
+                bounds=alpha.getbbox()
+                if bounds is None:raise ValueError('航司LOGO没有可见图案：'+str(path))
         CACHE[key]=(iw,ih,bounds)
     iw,ih,(left,top,right,bottom)=CACHE[key]
     pad=2;bw=right-left+2*pad;bh=bottom-top+2*pad;scale=min(limit/bh,w/bw)
@@ -45,18 +71,8 @@ def airline_logo(g,code,x,y,w,h):
     if local:
         path=Path(local)
         limit=min(h,32 if h<=43 else 48)
-        if path.suffix.lower()=='.svg':
-            from defusedxml import ElementTree
-            root=ElementTree.parse(path).getroot();box=root.get('viewBox')
-            if box:bw,bh=list(map(float,box.replace(',',' ').split()))[2:]
-            else:bw,bh=[float(re.match(r'[0-9.]+',root.get(k,'1')).group()) for k in ['width','height']]
-        else:
-            raster_airline_logo(g,path,x,y,w,h,limit)
-            g.parts[-1]=g.parts[-1].replace('>',f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}">',1)
-            return
-        scale=min(limit/bh,w/bw)
-        img(g,path,x+(w-bw*scale)/2,y+(h-bh*scale)/2,bw*scale,bh*scale)
-        g.parts[-1]=g.parts[-1].replace('/>',f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}"/>',1)
+        raster_airline_logo(g,path,x,y,w,h,limit)
+        g.parts[-1]=g.parts[-1].replace('>',f' data-airline-logo="{code}" data-max-height="{limit}" data-max-width="{w}">',1)
         return
     path=BASE/'assets/logos'/('4O_reference.png' if code=='4O' else f'{code}.png')
     chinese=BASE/'assets/logos'/f'{code}_cn.png'
@@ -68,12 +84,7 @@ def airline_logo(g,code,x,y,w,h):
         return
     limit=min(h,32 if h<=43 else 48)
     if wikipedia.exists():
-        raw=wikipedia.read_text(encoding='utf-8');root=re.search(r'<svg\b[^>]*>',raw).group()
-        match=re.search(r'viewBox=[\"\x27]([^\"\x27]+)',root)
-        if match:bw,bh=list(map(float,match.group(1).split()))[2:]
-        else:bw,bh=[float(re.search(k+r'=[\"\x27]([0-9.]+)',root).group(1)) for k in ['width','height']]
-        scale=min(limit/bh,w/bw)
-        img(g,wikipedia,x+(w-bw*scale)/2,y+(h-bh*scale)/2,bw*scale,bh*scale)
+        raster_airline_logo(g,wikipedia,x,y,w,h,limit)
     else:
         raster_airline_logo(g,path,x,y,w,h,limit)
     closing='/>' if g.parts[-1].startswith('<image ') else '>'
@@ -135,9 +146,10 @@ def passport_v2(data,s,c,out):
         else:g.text(x,1114,cc,24,TEAL,600,'middle')
     g.line(65,1170,1535,1170,TEAL,1,.2,dash='10 10')
     g.text(65,1282,c['title'],66,'#122478',400,spacing=2)
-    if c.get('signature_svg'):img(g,Path(c['signature_svg']),1035,1216,500,134)
-    elif c.get('name'):
-        g.text(1535,1316,c['name'],min(108,560/max(1,len(c['name']))*1.4),'#122478',400,'end',font='Vivaldi, URW Chancery L, cursive')
+    signature_name=c.get('signature_name',c.get('name',''))
+    signature_layout=None
+    if c.get('signature_svg'):img(g,Path(c['signature_svg']),1065,1226,470,112)
+    elif signature_name:signature_layout=passport_signature(g,signature_name)
     g.rect(66,1312,54,31,'#444d48',3);g.circle(93,1327,10,'none','#fbfaf0',2);g.line(67,1327,119,1327,'#fbfaf0',2)
     g.text(136,1338,'PASSPORT • PASS • PASAPORTE',30,'#4f5550',600)
     g.text(65,1564,s['flights'],220,'#222724',600);g.text(68,1693,'flights',112,'#5661a1',300)
@@ -171,7 +183,7 @@ def passport_v2(data,s,c,out):
         # Spread filler BETWEEN information groups, not in a trailing block.
         slots=max(9,64-sum(map(len,fields)));q,r=divmod(slots,len(fields)-1)
         lines.append(''.join(t+('<'*(q+(j<r)) if j<len(fields)-1 else '') for j,t in enumerate(fields)))
-    s['passport_layout']={'mrz_lines':lines,'flag_count':len(countries),'flag_size':62,'flag_y':1073,'flag_bottom':1135,'flag_extra_clip':False,'world_map_box':[15,205,1570,820],'world_map_projection_scales':[1570/360,820/142],'signature':c.get('name',''),'signature_box':[1035,1216,500,134],'unit_font_size':67}
+    s['passport_layout']={'mrz_lines':lines,'flag_count':len(countries),'flag_size':62,'flag_y':1073,'flag_bottom':1135,'flag_extra_clip':False,'world_map_box':[15,205,1570,820],'world_map_projection_scales':[1570/360,820/142],'signature':signature_name,'signature_box':[1065,1226,470,112],'signature_layout':signature_layout,'unit_font_size':67}
     for i,t in enumerate(lines):
         chars=''.join(f'<tspan x="{65+j*1450/(len(t)-1):.2f}">{escape(ch)}</tspan>' for j,ch in enumerate(t))
         g.add(f'<text y="{2078+i*53}" font-family="Consolas, monospace" font-size="31" fill="#657371">{chars}</text>')
@@ -296,7 +308,7 @@ def atlas_v2(data,s,c,out):
     from domestic_map import build_map
     from airframe_cards import load_cards
     facts,retired,lifecycle=load_cards(data,c)
-    CACHE['logos']=c.get('logos',{});CACHE['alliance_logos']=c.get('alliance_logos',{})
+    CACHE['logos']=c.get('logos',{});CACHE['alliance_logos']=c.get('alliance_logos',{});CACHE['logo_node']=c.get('node','node')
     airport_names=json.loads((BASE/'assets/data/airport_display_names.json').read_text(encoding='utf-8'));airport_names.update(c.get('airport_display_names',{}))
     bar_min=c.get('bar_min',3);air_min=c.get('airline_bar_min',bar_min)
     repeated_air=[(a,n) for a,n in s['airlines'].most_common() if n>=air_min];single_air=[a for a,n in s['airlines'].most_common() if n<air_min]
@@ -388,7 +400,7 @@ def atlas_v2(data,s,c,out):
         g.rect(xx,yy,160,76,'#fffdf7',9)
         airline_logo(g,code,xx+8,yy+6,144,64)
     # Same paper background as the poster, highlight the China landmass only.
-    img(g,out/'国内航线.svg',835,top+145,1485,map_height,'none')
+    img(g,out/'国内航线.svg',835,top+145,1485,map_height,'xMidYMid meet')
     from alliances import alliance_stats
     s['alliances']=alliance_stats(data)
     g.line(80,alliance_start,2320,alliance_start,NAVY,1,.18)
@@ -447,11 +459,12 @@ def atlas_v2(data,s,c,out):
         if reg.startswith('B') and '-' not in reg:reg='B-'+reg[1:]
         if reg in s['registrations']:registration_carriers.setdefault(reg,Counter())[r['AD']]+=1
     s['registration_carriers']={reg:dict(counts) for reg,counts in registration_carriers.items() if s['registrations'][reg]>1}
-    s['airframe_cards']={'age_as_of':c.get('age_as_of'),'age_basis':'首次交付日期至统计截止日','repeated':[],'retired':retired,'status_checked_on':lifecycle['as_of'],'screening_coverage':lifecycle['coverage']}
+    s['airframe_cards']={'age_as_of':c.get('age_as_of'),'age_basis':'首次交付日期至统计截止日','repeated':[],'retired':retired,'status_checked_on':lifecycle['as_of'],'screening_coverage':lifecycle['coverage'],'age_coverage':lifecycle['age_coverage']}
     def age_label(f,xx,yy):
-        value=f"{f['age']:.1f}" if f.get('age') is not None else '—'
+        value=f.get('age_display') or (f"{f['age']:.1f}" if f.get('age') is not None else '—')
         g.text(xx+208,yy+100,'机龄',14,MUTED,400,'end')
-        g.text(xx+268,yy+100,value,23,NAVY,600,'end')
+        size=min(23,23*54/max(54,ImageFont.truetype(font_path(600),23).getlength(value)))
+        g.text(xx+268,yy+100,value,size,NAVY,600,'end')
         g.text(xx+288,yy+100,'年',14,MUTED,400,'end')
     def photo(f,xx,yy,offset):
         p=f.get('photo')

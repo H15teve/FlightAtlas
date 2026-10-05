@@ -53,3 +53,11 @@ Supplemental records, all private/local:
 ```
 
 Photo/status examples are synthetic, not assertions about real aircraft. A photo requires a matching MSN from the input; verify externally before filling. Reject conflicting MSNs or first-delivery dates. Card age means elapsed years since first delivery as of `age_as_of`, not manufacturing year. Lifecycle coverage is explicit; zero verified retirements doesn't imply all aircraft remain in passenger service.
+
+### Separate signature and delivery precision
+
+`signature_name` (or CLI `--signature-name`) sets the script signature independently from the identity name. Preserve the provided case, including full uppercase; do not apply the identity field's 32-character limit to this separate signature. Fit long signatures to the same reserved box by actual glyph bounds.
+
+An `aircraft_details` entry may supply `delivery_date_range: ["YYYY-MM-DD", "YYYY-MM-DD"]` instead of inventing an exact delivery day. It requires matching registration/MSN, `user_verified: true`, and `delivery_source`. Both bounds must precede `age_as_of`. Month evidence uses that month’s first and last days as bounds; source disagreements retain their bounded dates. A conflicting exact delivery day fails validation. Rounded equal ages display ≈; differing ages display an interval.
+
+Preflight `aircraft_coverage` separates status `coverage` from `age_coverage`. Final audits retain these as `airframe_cards.screening_coverage` and `airframe_cards.age_coverage`. The latter counts exact and approximate delivery evidence and lists `missing_delivery_registrations` and `selected_cards_missing_age`. Missing exact-date cells can coexist with a valid interval age; do not describe those as completely unknown. Enrichment audit entries retain separate identity and delivery sources.

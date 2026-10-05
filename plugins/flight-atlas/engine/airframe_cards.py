@@ -1,4 +1,5 @@
 import datetime as dt
+from collections import Counter
 from build import BASE
 def load_cards(data,config):
     facts={};asof=dt.date.fromisoformat(config['age_as_of'])
@@ -14,6 +15,28 @@ def load_cards(data,config):
         if r['Y'] and f['delivery_date'] and r['Y']!=f['delivery_date']:raise ValueError('同一机体首次交付日期不一致')
         if age is not None and f['age'] is None:f.update(delivery_date=r['Y'],age=age)
         if r['AD'] not in f['carriers']:f['carriers'].append(r['AD'])
+    ranges={}
+    for evidence in config.get('aircraft_details', []):
+        reg=evidence.get('registration');f=facts.get(reg)
+        if not f or not evidence.get('delivery_date_range'):continue
+        if evidence.get('user_verified') is not True or not evidence.get('delivery_source'):
+            raise ValueError('交付日期区间需来源和用户核验')
+        if str(evidence.get('msn'))!=str(f['msn']):raise ValueError('交付区间MSN不匹配')
+        bounds=evidence['delivery_date_range']
+        if not isinstance(bounds,list) or len(bounds)!=2:raise ValueError('交付日期区间需要两个日期边界')
+        start,end=map(dt.date.fromisoformat,bounds)
+        if not start<=end<=asof:raise ValueError('交付区间无效或晚于截止日')
+        if reg in ranges and ranges[reg]!=(start,end):raise ValueError('同一机体交付区间不一致；先核验冲突')
+        ranges[reg]=(start,end)
+        if f['delivery_date']:
+            if not start<=dt.date.fromisoformat(f['delivery_date'])<=end:
+                raise ValueError('精确交付日期与交付区间冲突')
+            continue
+        low=round((asof-end).days/365.2425,1);high=round((asof-start).days/365.2425,1)
+        f.update(delivery_date_range=[start.isoformat(),end.isoformat()],
+                 delivery_source=evidence['delivery_source'],age_approximate=True,
+                 age_interval=[low,high],age=low if low==high else None,
+                 age_display=f'≈{low:.1f}' if low==high else f'{low:.1f}–{high:.1f}')
     for p in config.get('photos',[]):
         reg=p.get('registration')
         if reg not in facts:continue
@@ -31,4 +54,11 @@ def load_cards(data,config):
         if e.get('permanent_passenger_exit') is True:
             if not e.get('last_passenger_date') or not e.get('status'):raise ValueError('退出客运记录缺少日期/日期精度或现状')
             retired.append({**facts[reg],**e})
-    return facts,retired,{'as_of':config['age_as_of'],'coverage':{'known_registrations':len(facts),'verified_registrations':len(verified),'unverified_registrations':len(facts)-len(verified)}}
+    counts=Counter(r['K'] for r in data['rows'])
+    repeated={reg for reg in facts if counts[reg]>=config.get('repeat_min',2)} if config.get('include_repeated',True) else set()
+    selected=repeated|({r['registration'] for r in retired} if config.get('include_retired',False) else set())
+    exact={reg for reg,f in facts.items() if f['delivery_date'] and f['age'] is not None}
+    approximate={reg for reg,f in facts.items() if f.get('age_display')}
+    missing=sorted(set(facts)-exact-approximate)
+    age_coverage={'known_registrations':len(facts),'exact_delivery_registrations':len(exact),'approximate_delivery_registrations':len(approximate),'missing_delivery_registrations':missing,'selected_card_registrations':len(selected),'selected_cards_with_age':len(selected&(exact|approximate)),'selected_cards_missing_age':sorted(selected-set(exact)-approximate)}
+    return facts,retired,{'as_of':config['age_as_of'],'coverage':{'known_registrations':len(facts),'verified_registrations':len(verified),'unverified_registrations':len(facts)-len(verified)},'age_coverage':age_coverage}

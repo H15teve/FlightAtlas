@@ -23,12 +23,14 @@ def public_files():
                 raise ValueError('Private path/name found: '+str(p.relative_to(ROOT)))
     return sorted(set(files))
 def main():
-    files=public_files();folder=ROOT/'dist';folder.mkdir(exist_ok=True);target=folder/'FlightAtlas-0.1.2.zip'
+    version=json.loads((ROOT/'plugins/flight-atlas/plugin.json').read_text(encoding='utf-8'))['version']
+    if not re.fullmatch(r'\d+\.\d+\.\d+',version):raise ValueError('Invalid release version')
+    files=public_files();folder=ROOT/'dist';folder.mkdir(exist_ok=True);target=folder/f'FlightAtlas-{version}.zip'
     manifest={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
     with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
         for p in files:z.write(p,'FlightAtlas/'+str(p.relative_to(ROOT)).replace('\\','/'))
         z.writestr('FlightAtlas/RELEASE_FILES.json',json.dumps(manifest,indent=2))
     digest=hashlib.sha256(target.read_bytes()).hexdigest()
-    (folder/'FlightAtlas-0.1.2.sha256').write_text(digest+'  '+target.name+'\n',encoding='ascii')
+    (folder/f'FlightAtlas-{version}.sha256').write_text(digest+'  '+target.name+'\n',encoding='ascii')
     print(json.dumps({'files':len(files),'zip':str(target),'sha256':digest,'bytes':target.stat().st_size}))
 if __name__=='__main__':main()

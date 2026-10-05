@@ -8,7 +8,10 @@ def validate(schema_path=None):
         import jsonschema
         jsonschema.validate(portable,json.loads(Path(schema_path).read_text(encoding='utf-8')))
     assert set(portable)<= {'$schema','name','version','description','author','homepage','repository','license','keywords','extensions'}
-    assert portable['name']=='flight-atlas' and portable['version']=='0.1.2'
+    assert portable['name']=='flight-atlas' and re.fullmatch(r'\d+\.\d+\.\d+',portable['version'])
+    package=json.loads((PLUGIN/'package.json').read_text(encoding='utf-8'))
+    lock=json.loads((PLUGIN/'package-lock.json').read_text(encoding='utf-8'))
+    assert package['version']==lock['version']==lock['packages']['']['version']==portable['version']
     compatibility=json.loads((PLUGIN/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
     assert compatibility['name']==portable['name'] and compatibility['version']==portable['version']
     skill=(PLUGIN/compatibility['skills']).resolve();assert skill.is_relative_to(PLUGIN) and skill.is_dir()
