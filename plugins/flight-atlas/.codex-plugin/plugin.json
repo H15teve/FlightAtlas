@@ -1,6 +1,6 @@
 {
   "name": "flight-atlas",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Local flight passport and statistics from Umetrip export files.",
   "author": {"name": "FlightAtlas contributors"},
   "license": "MIT",
