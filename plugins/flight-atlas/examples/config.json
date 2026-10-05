@@ -1,0 +1,14 @@
+{
+  "distance_source": "export",
+  "report_kind": "diagnostic",
+  "include_repeated": true,
+  "include_retired": false,
+  "bar_min": 3,
+  "route_min": 3,
+  "name": "Demo Traveller",
+  "place_of_birth": "XMN",
+  "place_of_issue": "PEK",
+  "date_of_issue": "2025-01-01",
+  "valid_until": "2026-12-31",
+  "age_as_of": "2026-01-01"
+}

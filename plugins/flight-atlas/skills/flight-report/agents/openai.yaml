@@ -1,0 +1,7 @@
+interface:
+  display_name: "FlightAtlas 飞行报告"
+  short_description: "本地读取航旅纵横表格，生成可维护的飞行护照与机型、航司和机场统计图"
+  brand_color: "#122478"
+  default_prompt: "使用 $flight-report 从我的航旅纵横导出表生成飞行报告，先确认里程口径和可选栏目。"
+policy:
+  allow_implicit_invocation: true

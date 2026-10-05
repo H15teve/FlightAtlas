@@ -1,0 +1,27 @@
+{
+ "memberships":[
+  {"carrier":"中国国航","alliance":"星空联盟","from":"2007-12-12"},
+  {"carrier":"深圳航空","alliance":"星空联盟","from":"2012-11-29"},
+  {"carrier":"土耳其航空","alliance":"星空联盟","from":"2008-04-01"},
+  {"carrier":"埃塞俄比亚航空","alliance":"星空联盟","from":"2011-12-13"},
+  {"carrier":"美国联合","alliance":"星空联盟","from":"1997-05-14"},
+  {"carrier":"韩亚航空","alliance":"星空联盟","from":"2003-03-01"},
+  {"carrier":"全日空航空","alliance":"星空联盟","from":"1999-10-15"},
+  {"carrier":"厦门航空","alliance":"天合联盟","from":"2012-11-21"},
+  {"carrier":"东方航空","alliance":"天合联盟","from":"2011-06-21"},
+  {"carrier":"大韩航空","alliance":"天合联盟","from":"2000-06-22"},
+  {"carrier":"南方航空","alliance":"天合联盟","from":"2007-11-15","through":"2018-12-31"},
+  {"carrier":"国泰航空","alliance":"寰宇一家","from":"1999-02-01"},
+  {"carrier":"日本航空","alliance":"寰宇一家","from":"2007-04-01"}
+ ],
+ "non_alliance_carriers":["海南航空","山东航空","捷蓝航空","赞比亚航空","赞比亚普罗飞航空","西部航空","黑山航空","越捷航空","天津航空","昆明航空","维珍澳洲航空","澳门航空","河北航空","四川航空","中国联合航空"],
+ "sources":[
+  "https://ffp.xiamenair.com/en-US/upload/files/2018/vip-book_en.pdf",
+  "https://www.csair.com/sg/en/about/news/news/2019/1d6i6slshaj0u.shtml",
+  "https://flights.staralliance.com/en/",
+  "https://www.oneworld.com/news/2020-05-04-oneworld-20-facts",
+  "https://www.skyteam.com/en/business-solutions/corporate-agreements/corporate-agreements-in-china"
+ ],
+ "checked":"2026-10-03",
+ "update_policy":"Add or terminate full-membership intervals when airline membership changes. Verify any new airline or membership change against official sources."
+}

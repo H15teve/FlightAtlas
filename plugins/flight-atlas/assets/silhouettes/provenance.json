@@ -1,0 +1,870 @@
+{
+  "revision": "2026-10-04-flat-palette",
+  "generator": "OpenAI built-in image generation and editing",
+  "origin": "Generative editorial illustrations; references used to understand structure, not redistributed photographs or manual illustrations",
+  "projection": "left orthographic side elevation; horizontal fuselage; far-side engines and wheels may be occluded",
+  "style": "Three color roles: fixed group body fill; white contours/edges/cabin windows; gray glass and black A350/A330neo cockpit mask. Original alpha retained; boundary antialiasing may blend these role colors.",
+  "limits": "Fixed representative family art, not engineering-certified or registration-specific equipment drawings. Gear layout and visible axle arrangement are represented; hub micro-detail is simplified. Vendor-specific bolt/hole counts not verified and not claimed. Matching annular construction is not evidence of identical wheel parts.",
+  "references": {
+    "wheel_construction": "https://safetyfirst.airbus.com/take-care-of-the-wheel-tie-bolts/",
+    "A350_main_photo": "https://www.safran-group.com/news/paris-air-show-spotlight-a350-900-main-landing-gear-2019-06-17",
+    "A380_layout": "https://www.aircraft.airbus.com/sites/g/files/jlcbta126/files/2025-12/AC_A380_20251201.pdf",
+    "A340_layout": "https://www.aircraft.airbus.com/sites/g/files/jlcbta126/files/2025-12/AC_A340-200-300_20251201.pdf"
+  },
+  "reference_scope": {
+    "wheel_construction": "Generic split-hub, axle and tie-bolt construction only; not per-model hole counts",
+    "A350_main_photo": "A350-900 main wheel hub and four-wheel two-axle bogie; not nose hub",
+    "A380_layout": "Wing gear two axles; body gear three axles. Schematic is not actual outer hub detail.",
+    "A340_layout": "A340-200/-300 four-wheel wing bogies and single-axle twin-wheel centerline unit."
+  },
+  "assets": {
+    "JS41": {
+      "representative": "Jetstream 41, 19.25m, slim twin turboprop, low wing, cruciform tail, one near-side propeller seen edge-on as a slim vertical blade/disc, far prop hidden",
+      "file": "JS41.png",
+      "sha256": "9a3a43239b45182d3a8ed1936f9ace9371e0d7dbdbaf2f631987294ecfb9b76d",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Jetstream 41, 19.25m, slim twin turboprop, low wing, cruciform tail, one near-side propeller seen edge-on as a slim vertical blade/disc, far prop hidden. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Jetstream 41. Small near main wheel mounted to engine/wing landing gear, one axle, and much smaller nose wheel. Preserve the original wheel diameters and positions. Compact split-wheel hub with rounded axle cap, not the large widebody hub copied to this light turboprop. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          189,
+          420,
+          280,
+          480
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B737": {
+      "representative": "Boeing 737-800 NG, 39.47m, low swept wing, blended winglet, conventional tail, two underwing engines total but only near engine side profile visible",
+      "file": "B737.png",
+      "sha256": "e5e12292c69f93d0e0f314c7f24a8bf26863684f6c9b65da8aa63c40cfec8825",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Boeing 737-800 NG, 39.47m, low swept wing, blended winglet, conventional tail, two underwing engines total but only near engine side profile visible. Solid body paint #165c91.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing 737-800. Conventional single axle twin-wheel main gear: one visible circular MAIN tire in strict profile and one smaller nose wheel face, paired opposite wheel hidden. Main face is a solid brake-bearing recessed hub with central cap/annular flange; nose face simpler unbraked cap. Keep model-specific sizes and strut locations. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          108,
+          427,
+          206,
+          468
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B38M": {
+      "representative": "Boeing 737 MAX 8, 39.52m, low wing, split scimitar-style MAX AT winglet and large LEAP nacelle",
+      "file": "B38M.png",
+      "sha256": "ed1087b0e6abecfa210d3ef72bda2e5a6f0b8a4da8106d3129647e97feff90a7",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Boeing 737 MAX 8, 39.52m, low wing, split scimitar-style MAX AT winglet and large LEAP nacelle. Solid body paint #165c91. Draw TWO adjacent over-wing emergency exit outlines, not one, on the visible side, like the 737-800. Remove gray paint from the engine front and exhaust: all nacelle and intake areas must use blue body paint with white edges.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing 737 MAX 8. Conventional single axle twin-wheel main gear: one main tire face in strict profile plus smaller nose wheel, far paired wheels occluded. Solid braked main hub versus simpler nose cap; don't copy an identical star. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          90,
+          408,
+          186,
+          445
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A320": {
+      "representative": "Airbus A320ceo, 37.57m, NOT A321, classic small wingtip fence, two overwing exit doors, conventional tail",
+      "file": "A320.png",
+      "sha256": "4454caf94aa5eee7c33eed492ca5344b27471d67202f5e202a92dc2a1a6b66d3",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Airbus A320ceo, 37.57m, NOT A321, classic small wingtip fence, two overwing exit doors, conventional tail. Solid body paint #165c91. Critical A320-specific correction: draw TWO small adjacent over-wing emergency exit rectangles on this visible side, between forward/aft large cabin doors; do not reduce to one.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A320ceo. Single axle paired main tires one visible main face, paired nose tires one visible smaller face in strict side view. Main wheel solid annular recessed hub with central cap and subtle flange relief; nose cap simpler, unbraked. Do not impose a specific invented bolt count. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          101,
+          431,
+          196,
+          469
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A20N": {
+      "representative": "Airbus A320neo, 37.57m, sharklet wingtip, large underwing nacelle, NOT A321, two overwing exits",
+      "file": "A20N.png",
+      "sha256": "6a19c3a19c9aebe8321ff54da7a102776bee4e84038b4a0e15bc1789163d37da",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Airbus A320neo, 37.57m, sharklet wingtip, large underwing nacelle, NOT A321, two overwing exits. Solid body paint #165c91. Critical A320-specific correction: draw TWO small adjacent over-wing emergency exit rectangles on this visible side, between forward/aft large cabin doors; do not reduce to one.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A320neo. Single axle paired main tires one visible main face, nose paired wheel one visible smaller face in profile. Preserve actual strut and unequal tire diameter. Solid braked main hub and simpler nose cap, no stylized star spokes. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          108,
+          397,
+          214,
+          439
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B752": {
+      "representative": "Boeing 757-200, 47.32m, long slender fuselage, pointed Boeing nose, low wing, tall conventional tail, one near engine visible",
+      "file": "B752.png",
+      "sha256": "aa0eda6e3ec47a9ed71528776ff8aea8f03e10db300416a4eb49dbbb0c36002e",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Boeing 757-200, 47.32m, long slender fuselage, pointed Boeing nose, low wing, tall conventional tail, one near engine visible. Solid body paint #165c91.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing 757-200. FOUR-wheel main bogie with TWO axles: two longitudinal visible tire faces on near bogie, far pair hidden. One smaller visible nose tire face. Solid recessed main hubs at both axle positions, compact unbraked nose cap. No extra third main axle. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          78,
+          416,
+          170,
+          454
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "BCS3": {
+      "representative": "Airbus A220-300, 38.70m, pointed distinctive nose, low swept wing and winglet, conventional tail",
+      "file": "BCS3.png",
+      "sha256": "789f8a5ce14fd2b6796a26704dffd1adcd8d8374e3bf2a9177b65d20cbcc1112",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Airbus A220-300, 38.70m, pointed distinctive nose, low swept wing and winglet, conventional tail. Solid body paint #165c91.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A220-300. Single axle paired main tires, ONE visible near main wheel face in strict side profile and ONE smaller nose face. Main hub solid recessed annular brake-bearing face, nose simple central cap. Remove black tire color but preserve locations. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          94,
+          404,
+          197,
+          445
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "C919": {
+      "representative": "COMAC C919, 38.90m, low swept wing/sharklet, large nacelle, small realistic cockpit black mask with neutral gray glass inside thin black perimeter",
+      "file": "C919.png",
+      "sha256": "3f1c9b8a3eb665388073d5e310358f4809499ef9d7f9332e59e59570566d725b",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: COMAC C919, 38.90m, low swept wing/sharklet, large nacelle, small realistic cockpit black mask with neutral gray glass inside thin black perimeter. Solid body paint #165c91.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. COMAC C919. Main dual wheels on a single axle: one visible main face and smaller nose face in true side view. Replace black tires with fuselage blue. Conservative solid filled hub relief, concentric structural flange and central cap without invented decorative spokes. Fuselage and wheel fill #165c91. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "color_edit_prompt": "Use case: precise-object-edit. Edit ONLY COLOR FILL and cockpit mask treatment of Image1, the existing FlightAtlas icon. Lock ALL silhouette, fuselage/wing/tail dimensions, standard left orthographic side view, engines and exact landing gear axle/wheel layout. Preserve full plane and transparent alpha. STRICT FLAT THREE-ROLE PALETTE: (1) BODY COLOR fills fuselage, ALL wings/tail, engine nacelles AND intake/exhaust faces, tires, solid hubs and ALL connecting landing-gear legs/struts/braces/axles/doors. (2) PURE WHITE #FFFFFF only for thin contours/edges/internal separation strokes and SOLID filled cabin windows. (3) neutral GRAY #858585 cockpit GLASS only; BLACK permitted only on an actual mask around cockpit glass for specified models. Remove EVERY gray/silver/black part elsewhere including engine exhaust patch, white/silver solid gear struts, gray unfilled cabin windows. White outline over body-colored solid struts is correct; solid white struts are not. Body fill must be absolutely UNIFORM flat single color, no gradients, shade variants, metallic shading, colored fringe, glow or beige lines. Cockpit and white lines remain small, not enlarged. No text/logos/new structures. COMAC C919. BODY COLOR #165c91. REMOVE the falsely added BLACK sunglasses mask around cockpit. Only existing gray glass panes and fine WHITE window frame lines; fill former exterior black surrounding area back to blue fuselage. No continuous black band, no dark external surround.",
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          22,
+          92,
+          145
+        ],
+        "cockpit_box": [
+          86,
+          420,
+          192,
+          462
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "AJ27": {
+      "representative": "COMAC C909 / ARJ21-700, 33.46m, low swept wing/winglet, two aft fuselage-mounted engines total (only near one visible), T-tail",
+      "file": "AJ27.png",
+      "sha256": "28ce5c5c24f66c940253298862ab64c8f370f15999cf48b74e832a7814f6b0c4",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: COMAC C909 / ARJ21-700, 33.46m, low swept wing/winglet, two aft fuselage-mounted engines total (only near one visible), T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. COMAC C909/ARJ21-700. Single-axle twin-wheel main gear, one main tire face visible; paired nose tires one smaller face visible. Main solid braked hub with compact central cap and structural rim, unbraked nose simpler. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          143,
+          353,
+          247,
+          404
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "E195": {
+      "representative": "Embraer E195 first-generation, 38.65m, NOT E2, long fuselage, low swept wing with winglet, small underwing nacelle, conventional tail",
+      "file": "E195.png",
+      "sha256": "d166115109e1f1c632fa9415943cdfb7ee28b24e6bf16d27d6c507a8a83988c2",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Embraer E195 first-generation, 38.65m, NOT E2, long fuselage, low swept wing with winglet, small underwing nacelle, conventional tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Embraer E195 first-generation. Single-axle paired main tires, only one visible main face, smaller nose wheel. Filled cast hub flange/axle cap with subtle relief, not hollow spoke pattern. Keep small original hub diameter rather than exaggerate. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          102,
+          391,
+          194,
+          433
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "DH8D": {
+      "representative": "De Havilland Dash 8-Q400, 32.84m, high straight wing, two turboprop engines total, only near-side engine visible, propeller edge-on as a slim vertical disc/blade, T-tail",
+      "file": "DH8D.png",
+      "sha256": "ab91c9faa3fdf1b9f15ecd3f4517e14e0acd9fd05fa0c66b944c318516f3a2c5",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: De Havilland Dash 8-Q400, 32.84m, high straight wing, two turboprop engines total, only near-side engine visible, propeller edge-on as a slim vertical disc/blade, T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Dash 8-Q400. Main gear long leg descends from NEAR ENGINE NACELLE, twin wheels on ONE axle; one near tire face visible, not fuselage bogie. Nose paired tires one smaller face. Main wheel filled brake-bearing recessed hub with cap, unbraked nose simpler; preserve long strut and nacelle mounting. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          105,
+          399,
+          222,
+          441
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B777": {
+      "representative": "Boeing 777-300ER, 73.86m, very long wide fuselage, enormous near-side GE90 nacelle, raked wingtip not winglet, conventional tail, main gear has three side-profile wheels in line",
+      "file": "B777.png",
+      "sha256": "b87cd4a2d1ea12b877c5f993b65894f6bc205ae5ee286da8d20514a182c970b3",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Boeing 777-300ER, 73.86m, very long wide fuselage, enormous near-side GE90 nacelle, raked wingtip not winglet, conventional tail, main gear has three side-profile wheels in line. Solid body paint #c28316. Keep ALL engine intake faces and exhaust cones body gold, not gray like glazing.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing 777-300ER. Main gear is SIX-wheel THREE-AXLE bogie: exactly THREE longitudinal visible main tire faces, far three hidden. One smaller visible nose wheel. Preserve all three main wheels, bogie beam and strut. Solid main hub face with central axle cap/recessed annular flange, not star spokes. Nose cap is smaller and simpler. Fuselage and wheel fill #c28316. Image2 shows basic AIRCRAFT wheel split-hub construction ONLY, not model-specific bolt count. Never turn wheel center into a transparent hole.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          62,
+          414,
+          122,
+          441
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B787": {
+      "representative": "Boeing 787-9, 62.81m, distinctive smoothly curved nose, near nacelle with chevron trailing edge, raked wingtip, conventional tail",
+      "file": "B787.png",
+      "sha256": "f280f440c24e5aa2509fe8f0098f9c55560be914877b6fc70cb0e19c46daa2f1",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nONE Boeing 787-9 Dreamliner, 62.81m, graceful widebody with smooth rounded nose, raked swept wing tips, two underwing engines with chevron rear nacelle edges, conventional tail and two tandem wheels in visible main bogie. Only one near-side engine visible in this strict left profile. Solid gold #c28316 body, white outlines, gray cockpit. The entire upper fuselage roof must be a smooth continuous horizontal outline from behind cockpit to vertical tail: ZERO antennas, ZERO dorsal bumps, ZERO small fins. Do not place any small upright object behind the wing. Only the LARGE vertical tail fin and genuine swept near wing may project above fuselage. No glow, shadow or fog.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing787-9. FOUR wheel TWO-AXLE near main bogie, TWO visible tandem main tire faces, far pair occluded. One smaller visible nose face. Solid main hub with recessed annular face/center cap, simple unbraked nose cap. Keep perfectly SMOOTH fuselage roof, no fin/spike before tail. All wheel tire and solid hub fill #c28316. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          75,
+          405,
+          145,
+          435
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A330": {
+      "representative": "Airbus A330-300ceo, 63.66m, long wide fuselage, small classic winglet, one near-side underwing engine visible, conventional tail",
+      "file": "A330.png",
+      "sha256": "90161f485b224fea7c4277f149988deb7eb8be6c7185dedb1be58895d113da2a",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Airbus A330-300ceo, 63.66m, long wide fuselage, small classic winglet, one near-side underwing engine visible, conventional tail. Solid body paint #c28316. Keep ALL engine intake faces and exhaust cones body gold, not gray like glazing.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. AirbusA330-300ceo. FOUR wheel TWO-AXLE near main bogie, TWO tandem visible main tire faces, far pair occluded. One smaller visible nose face. Recessed filled brake-bearing main hub, simple nose cap, subtle annular structural relief. All wheel tire and solid hub fill #c28316. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          54,
+          383,
+          134,
+          413
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A350": {
+      "representative": "Airbus A350-900, 66.80m, rounded modern nose, smoothly curved winglet. SMALL proportionate A350 cockpit mask: neutral gray glazing inside a continuous thin BLACK perimeter, no protruding chunk or navy/blue glass",
+      "file": "A350.png",
+      "sha256": "f094fd20cff896101d20d4a84e4998b65338edf1720a9590a984e068cf29b1bd",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Airbus A350-900, 66.80m, rounded modern nose, smoothly curved winglet. SMALL proportionate A350 cockpit mask: neutral gray glazing inside a continuous thin BLACK perimeter, no protruding chunk or navy/blue glass. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only. A350 mask must be SMALL: front/side windshield fitted within the normal narrow cockpit belt just above the fuselage nose line, not an oversize protruding block. Continuous thin BLACK perimeter (no white boundary around mask) with neutral #858585 panes, black mullions.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A350-900. Image 2 is the actual Safran main landing gear photograph. Use its filled recessed main wheel outer hub, large annular rim, compact center cap and peripheral tie-bolt relief, not a star-shaped hollow hub. Near main gear is a 4-wheel 2-axle bogie: exactly two main wheel circles visible in true side projection, far wheels occluded. Smaller nose gear wheel has a simpler cap, not the same full main wheel hub copied small.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          78,
+          391,
+          147,
+          425
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      },
+      "color_edit_prompt": "Edit image 1 (the A350) only. Image 2 is the A330neo/A339 reference ONLY for the proportional weight of its black cockpit windshield surround, not for its shape. Make the A350 black external windshield mask thicker, to approximately the same border thickness relative to windshield width as the A339 reference: about 5 percent of total windshield width. Thicken INWARD within the A350 existing windshield footprint; do NOT enlarge the windshield, copy A339 pane shapes, add protrusions, or change the A350 nose silhouette. Preserve the A350 rounded rear side pane, slanted front pane, and its thin internal pane divider; the outer black border must be continuous uniform black, with no gold or white breaks. Keep visible glass a uniform medium neutral gray #858585, not blue and not darker than the reference. Preserve every part outside the small cockpit area exactly: original left-facing standard side elevation, gold body #c28316, white contours and solid white passenger windows, gold engines and gear, existing structural details, aircraft scale, full canvas composition and transparent alpha background. Do not add text or any new details. Deliver a transparent PNG."
+    },
+    "B747": {
+      "representative": "Boeing 747-400, 70.66m, characteristic upper-deck hump over FRONT third only, NOT 747-8, four underwing engines total, exactly TWO near-side nacelles visible in profile, opposite two hidden. Winglets, four main gear bogies partially occluded",
+      "file": "B747.png",
+      "sha256": "eaa032b15624dfa83d1ff5c0d93ef6c0266c8839c20d94edb32ca4c37d556df7",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Boeing 747-400, 70.66m, characteristic upper-deck hump over FRONT third only, NOT 747-8, four underwing engines total, exactly TWO near-side nacelles visible in profile, opposite two hidden. Winglets, four main gear bogies partially occluded. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing747-400. Four main gear units total, EACH a FOUR wheel TWO-AXLE bogie. In strict side profile the near wing main gear and near body main gear each show TWO tandem tire faces, so FOUR visible main wheel circles in two pairs; far main gear hidden. One smaller nose face. Preserve two near-side engines and forward hump. Filled compact brake-bearing hub/center cap and annular flange detail. Do NOT copy A380's THREE-axle body gear. All wheel tire and solid hub fill #c28316. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "finish_prompt": "Use case: background-extraction and precise-object-edit. Preserve this exact LEFT orthographic Boeing747-400, including two near engines, forward upper-deck hump, white fuselage/wing contours, FOUR visible main tires in TWO 2-axle bogies plus small nose wheel, all body-colored solid wheels. REMOVE ALL gold atmospheric halo, glow, haze and vignette surrounding aircraft: background must be genuinely transparent at every point beyond the exact aircraft outer contour and gear. No shadows or glow outside aircraft. Flatten fuselage and wings to uniform #c28316 while keeping WHITE line work, neutral gray glass, body-color engine intakes. Do not change wheel/gear structure. Full airplane with transparent margins.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          157,
+          371,
+          218,
+          397
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A339": {
+      "representative": "Airbus A330-900neo, 63.66m, wide long fuselage, large Trent7000 nacelle, tall curved sharklet, small gray windshield with thin black mask perimeter",
+      "file": "A339.png",
+      "sha256": "3e1eddc24345eb45e8bba25fea79b3373c567739ad61ec41a2655dfd35796761",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Airbus A330-900neo, 63.66m, wide long fuselage, large Trent7000 nacelle, tall curved sharklet, small gray windshield with thin black mask perimeter. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. AirbusA330-900neo. Main FOUR wheel TWO-AXLE bogie, TWO visible tandem main tire faces. One smaller nose face. Solid recessed main hub/flange and center cap, simpler unbraked nose wheel cap. Preserve new engine and curved sharklet. All wheel tire and solid hub fill #c28316. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "color_edit_prompt": "Use case: precise-object-edit. Edit ONLY COLOR FILL and cockpit mask treatment of Image1, the existing FlightAtlas icon. Lock ALL silhouette, fuselage/wing/tail dimensions, standard left orthographic side view, engines and exact landing gear axle/wheel layout. Preserve full plane and transparent alpha. STRICT FLAT THREE-ROLE PALETTE: (1) BODY COLOR fills fuselage, ALL wings/tail, engine nacelles AND intake/exhaust faces, tires, solid hubs and ALL connecting landing-gear legs/struts/braces/axles/doors. (2) PURE WHITE #FFFFFF only for thin contours/edges/internal separation strokes and SOLID filled cabin windows. (3) neutral GRAY #858585 cockpit GLASS only; BLACK permitted only on an actual mask around cockpit glass for specified models. Remove EVERY gray/silver/black part elsewhere including engine exhaust patch, white/silver solid gear struts, gray unfilled cabin windows. White outline over body-colored solid struts is correct; solid white struts are not. Body fill must be absolutely UNIFORM flat single color, no gradients, shade variants, metallic shading, colored fringe, glow or beige lines. Cockpit and white lines remain small, not enlarged. No text/logos/new structures. Airbus A330-900neo. BODY COLOR #c28316. This model HAS the characteristic BLACK cockpit MASK: compact proportionate continuous black surrounding band connecting existing gray windshield panes, following the actual A330neo cockpit window outline. Do not make giant A350 round glasses; retain A330 nose geometry. White frame strokes inside mask may distinguish panes. Keep TWO main bogie tire faces.",
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          58,
+          417,
+          131,
+          448
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A340": {
+      "representative": "Airbus A340-300, 63.69m, NOT A340-600, four small underwing engines total; exactly TWO near-side nacelles visible side-on below the same near wing, far two completely hidden. Small classic winglet, conventional tail, center main gear",
+      "file": "A340.png",
+      "sha256": "0f8c835c6e0ad15f1db13c2e03d494c14295eca763525651824848c3e5b53d3c",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Airbus A340-300, 63.69m, NOT A340-600, four small underwing engines total; exactly TWO near-side nacelles visible side-on below the same near wing, far two completely hidden. Small classic winglet, conventional tail, center main gear. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A340-300, NOT A340-600. Correct missing centerline landing gear: two wing main units with four-wheel/two-axle bogies plus a centerline twin-wheel SINGLE-AXLE assembly. In this side profile show the near wing bogie's two longitudinal tire faces and ONE center gear tire face in its actual center fuselage location behind that wing gear, supported by its own center strut. Far wheels occluded. Total three visible main wheel faces plus smaller nose face. Do not give centre gear a two-axle bogie. Image2 is manufacturer's layout evidence only. Solid recessed wheel hub with central axle cap and subtle annular flange, no fabricated star spoke pattern.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "color_edit_prompt": "Use case: precise-object-edit. Edit ONLY COLOR FILL and cockpit mask treatment of Image1, the existing FlightAtlas icon. Lock ALL silhouette, fuselage/wing/tail dimensions, standard left orthographic side view, engines and exact landing gear axle/wheel layout. Preserve full plane and transparent alpha. STRICT FLAT THREE-ROLE PALETTE: (1) BODY COLOR fills fuselage, ALL wings/tail, engine nacelles AND intake/exhaust faces, tires, solid hubs and ALL connecting landing-gear legs/struts/braces/axles/doors. (2) PURE WHITE #FFFFFF only for thin contours/edges/internal separation strokes and SOLID filled cabin windows. (3) neutral GRAY #858585 cockpit GLASS only; BLACK permitted only on an actual mask around cockpit glass for specified models. Remove EVERY gray/silver/black part elsewhere including engine exhaust patch, white/silver solid gear struts, gray unfilled cabin windows. White outline over body-colored solid struts is correct; solid white struts are not. Body fill must be absolutely UNIFORM flat single color, no gradients, shade variants, metallic shading, colored fringe, glow or beige lines. Cockpit and white lines remain small, not enlarged. No text/logos/new structures. Airbus A340-300. BODY COLOR #c28316, precisely matching other gold widebody icons. Keep two near nacelles, two wing-bogie tire faces plus one center gear face. No cockpit mask: gray panes and white thin frames only.",
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          66,
+          478,
+          129,
+          503
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "A380": {
+      "representative": "Airbus A380-800, 72.72m, very deep full-length DOUBLE DECK with TWO cabin-window rows along the WHOLE fuselage, four engines total; exactly TWO near-side nacelles visible and far two hidden, enormous fin, wingtip fence",
+      "file": "A380.png",
+      "sha256": "f9d9c350b3bbb2659e60f493be37a5ee082d4595caa2094765b5159c8246e0af",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Airbus A380-800, 72.72m, very deep full-length DOUBLE DECK with TWO cabin-window rows along the WHOLE fuselage, four engines total; exactly TWO near-side nacelles visible and far two hidden, enormous fin, wingtip fence. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Airbus A380-800. Correct the TWO different visible near main assemblies: near WING gear is 4 wheels on TWO axles, so two side-profile wheel circles; near BODY gear is 6 wheels on THREE axles, so THREE longitudinal side-profile wheel circles. Current aft body bogie wrongly has only two visible wheels: add its third axle/wheel with proper beam and leg, under fuselage, not another wheel on the wing bogie. Total 5 visible main wheel faces plus small nose face, opposite wheels hidden. Image2 is wing gear structural reference and Image3 body gear structural reference. Do NOT interpret schematic concentric circles as exact real hub detail. Use restrained solid recessed hub faces, compact central cap and annular flange; no invented star.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          75,
+          469,
+          139,
+          496
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "B767": {
+      "representative": "Boeing 767-300ER, 54.94m, medium widebody fuselage, classic conventional tail, low swept wing WITHOUT winglet, two engines total, only near-side engine visible",
+      "file": "B767.png",
+      "sha256": "f9244b96a3dae5858c81e2c6887f1cce8c411a472f7f9052880830aa330033b8",
+      "projection_prompt": "Create ONE isolated flat technical AIRCRAFT SIDE-ELEVATION drawing for the FlightAtlas icon set. STRICT LEFT SIDE ORTHOGRAPHIC PROFILE, like a manufacturer's three-view SIDE drawing. Nose points LEFT, fuselage centerline perfectly HORIZONTAL. Camera from exactly 90 degrees to aircraft longitudinal centerline, at its mid-height, ZERO yaw/pitch/roll, ZERO perspective or foreshortening. Wings and horizontal stabilizers are seen EDGE-ON as slim narrow profiles; NO broad wing top surface or long diagonal three-quarter wing running across cabin windows. Engine nacelles in LONGITUDINAL SIDE PROFILE with only a narrow vertical front rim, NO circular/oval front intake face. Far engines, far wing and far landing gear naturally occluded by their near counterparts. Correct near engine count; never force all engines visible. Preserve accurate model-specific nose, fuselage length/height ratio, tail, wing height, cabin-window rows and landing gear. Gear down, round side faces of wheels. Minimal flat 2D vector-like aviation editorial illustration with uniform solid body paint, clear pure WHITE #FFFFFF contours, tiny white cabin windows, neutral gray #858585 cockpit glass only. Engine bodies AND intake/interior/rims in body color, never windshield-gray or black. No gradients, metallic shading, shadows, colored fringe, logos, words, extra aircraft or background. TRUE TRANSPARENT alpha background, whole aircraft uncropped with margin. Keep a smooth uninterrupted fuselage roof and belly: OMIT minor antennas, spikes and small protrusions entirely. Genuine tail, wingtip, landing gear and actual large wing root fairings remain. Do not invent far winglets on the fuselage roof. White strokes around fuselage/wings/tail/engines/doors approximately 3px at 2000px fuselage length, clearly visible at card size. Uniform solid fill, clean alpha edges.\nEXACT AIRCRAFT: Boeing 767-300ER, 54.94m, medium widebody fuselage, classic conventional tail, low swept wing WITHOUT winglet, two engines total, only near-side engine visible. Solid body color #c28316, every engine face/rim/cone is the SAME body color; cockpit gray only.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Boeing767-300ER. Main FOUR wheel TWO-AXLE bogie, TWO visible tandem near main tire faces. One smaller nose face. Filled recessed brake-bearing main hub/flange and compact center cap. Nose simpler and smaller. Remove black tire color, use gold. All wheel tire and solid hub fill #c28316. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "color_edit_prompt": "Use case: precise-object-edit. Edit ONLY COLOR FILL and cockpit mask treatment of Image1, the existing FlightAtlas icon. Lock ALL silhouette, fuselage/wing/tail dimensions, standard left orthographic side view, engines and exact landing gear axle/wheel layout. Preserve full plane and transparent alpha. STRICT FLAT THREE-ROLE PALETTE: (1) BODY COLOR fills fuselage, ALL wings/tail, engine nacelles AND intake/exhaust faces, tires, solid hubs and ALL connecting landing-gear legs/struts/braces/axles/doors. (2) PURE WHITE #FFFFFF only for thin contours/edges/internal separation strokes and SOLID filled cabin windows. (3) neutral GRAY #858585 cockpit GLASS only; BLACK permitted only on an actual mask around cockpit glass for specified models. Remove EVERY gray/silver/black part elsewhere including engine exhaust patch, white/silver solid gear struts, gray unfilled cabin windows. White outline over body-colored solid struts is correct; solid white struts are not. Body fill must be absolutely UNIFORM flat single color, no gradients, shade variants, metallic shading, colored fringe, glow or beige lines. Cockpit and white lines remain small, not enlarged. No text/logos/new structures. Boeing767-300ER. BODY COLOR #c28316. Every cabin window along fuselage must be SOLID WHITE #FFFFFF, not gray or hollow gold inside white outlines. Repaint connecting gear struts gold. Preserve two tandem main faces.",
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          194,
+          131,
+          22
+        ],
+        "cockpit_box": [
+          68,
+          417,
+          151,
+          453
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "E170": {
+      "representative": "Embraer E170 first-generation, 29.90m, short fuselage, low wing/winglet, small underwing engine, conventional tail not T-tail",
+      "file": "E170.png",
+      "sha256": "213cf5423403b0c38a1a6a0747b189279a064d3354edbbd4894648d815fa5a55",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nExact aircraft: Embraer E170 first-generation, 29.90m, short fuselage, low wing/winglet, small underwing engine, conventional tail not T-tail. Body #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Embraer E170. Single-axle twin-wheel main gear, only one main wheel face in profile. Main wheels noticeably larger than nose tire, solid recessed brake-bearing face/center cap. Nose hub compact unbraked cap. Retain strut layout. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          116,
+          451,
+          220,
+          492
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "E290": {
+      "representative": "Embraer E190-E2, 36.24m, slim high-aspect-ratio low wing WITHOUT tall winglets, large underwing GTF nacelle, conventional tail not T-tail",
+      "file": "E290.png",
+      "sha256": "c7aaac045dbb8321b8967549d2bd9d8c263216ae149fc79e19aea86adb8bc272",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Embraer E190-E2, 36.24m, slim high-aspect-ratio low wing WITHOUT tall winglets, large underwing GTF nacelle, conventional tail not T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Embraer E190-E2. Single-axle twin-wheel main gear, one near visible face plus smaller nose face in orthographic view. Braked main wheel hub compact recessed face; unbraked nose cap simple. No multi-axle widebody bogie. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          122,
+          368,
+          216,
+          410
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "AT42": {
+      "representative": "ATR 42-600, 22.67m, short compact fuselage, high straight wing, T-tail, two turboprops total but only near-side nacelle visible, propeller viewed EDGE ON as narrow vertical blade/disc not face-on star",
+      "file": "AT42.png",
+      "sha256": "eacb0b6792d5d251df6e917601e55e26f722d5e672bd38f87398fb26f8eb70eb",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: ATR 42-600, 22.67m, short compact fuselage, high straight wing, T-tail, two turboprops total but only near-side nacelle visible, propeller viewed EDGE ON as narrow vertical blade/disc not face-on star. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. ATR 42-600. Main gear mounted at fuselage belly side sponson, NOT turboprop engine nacelle: twin wheels on SINGLE axle; one main face in profile. Smaller nose face in profile. Solid compact flange/cap relief appropriate to small regional turboprop. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          165,
+          461,
+          298,
+          512
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "AT72": {
+      "representative": "ATR 72-600, 27.17m, longer fuselage than ATR42, high straight wing, T-tail, two turboprops total but only near nacelle visible, propeller EDGE ON narrow vertical blade/disc not star",
+      "file": "AT72.png",
+      "sha256": "b58ed1f7ebb851c7365b5d3bb668c1459cc9a77db252165423d50b0905ec6a64",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: ATR 72-600, 27.17m, longer fuselage than ATR42, high straight wing, T-tail, two turboprops total but only near nacelle visible, propeller EDGE ON narrow vertical blade/disc not star. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. ATR 72-600. Preserve fuselage belly side-sponson main gear, paired main wheels single axle one visible main face. Nose wheel smaller. Compact split-wheel solid hub/axle cap and light flange detail, not widebody hub scaled down. Keep wheel diameters proportionate to this aircraft, no enlarged gear. All wheel tire and solid hub fill #7845a4. Image2 shows basic construction ONLY, not model-specific hole counts. Tiny real annular rim/axle cap relief, no universal identical star texture.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          113,
+          413,
+          224,
+          458
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "BA46": {
+      "representative": "BAe 146-300, 31.00m, stubby round fuselage, HIGH shoulder swept wing, tall T-tail, FOUR small turbofans total TWO per wing. STRICT side profile shows exactly TWO NEAR-SIDE engine NACELLES, each in longitudinal SIDE ELEVATION, with the opposite two hidden; not four engines on one wing",
+      "file": "BA46.png",
+      "sha256": "e278978b223cca94bc121beee164e9407613cc74091f94069693f3af9093d19e",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: BAe 146-300, 31.00m, stubby round fuselage, HIGH shoulder swept wing, tall T-tail, FOUR small turbofans total TWO per wing. STRICT side profile shows exactly TWO NEAR-SIDE engine NACELLES, each in longitudinal SIDE ELEVATION, with the opposite two hidden; not four engines on one wing. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. BAe146-300. Main gear twin wheels on a single axle, one main face visible on near assembly, compact short body-mounted leg/side fairing. Smaller nose face. Preserve TWO near-side engines, never four on one wing. Filled compact aircraft hub flange/center cap, no decorative star. All wheel tire and solid hub fill #7845a4. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "finish_prompt": "Use case: precise-object-edit. Preserve exact LEFT orthographic BAe146-300 with only TWO visible near-side engines, filled purple body and WHITE contours. Correct ONLY the main gear tires: current near/far pair is incorrectly separated diagonally, introducing perspective. On the single-axle near main gear show ONE clean round tire face, with far twin tire fully occluded by it, NOT two offset tires. Keep same main strut and one smaller nose face. Tires and solid hub purple #7845a4, white rim and filled compact central cap/flange relief, no star spokes. Remove any tiny added spike at T-tail top. Smooth outer fuselage. Preserve all rest, genuine transparent alpha, no background/glow.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "color_edit_prompt": "Use case: precise-object-edit. Edit ONLY COLOR FILL and cockpit mask treatment of Image1, the existing FlightAtlas icon. Lock ALL silhouette, fuselage/wing/tail dimensions, standard left orthographic side view, engines and exact landing gear axle/wheel layout. Preserve full plane and transparent alpha. STRICT FLAT THREE-ROLE PALETTE: (1) BODY COLOR fills fuselage, ALL wings/tail, engine nacelles AND intake/exhaust faces, tires, solid hubs and ALL connecting landing-gear legs/struts/braces/axles/doors. (2) PURE WHITE #FFFFFF only for thin contours/edges/internal separation strokes and SOLID filled cabin windows. (3) neutral GRAY #858585 cockpit GLASS only; BLACK permitted only on an actual mask around cockpit glass for specified models. Remove EVERY gray/silver/black part elsewhere including engine exhaust patch, white/silver solid gear struts, gray unfilled cabin windows. White outline over body-colored solid struts is correct; solid white struts are not. Body fill must be absolutely UNIFORM flat single color, no gradients, shade variants, metallic shading, colored fringe, glow or beige lines. Cockpit and white lines remain small, not enlarged. No text/logos/new structures. BAe146-300/B463. BODY COLOR #7845a4. Especially repaint the GRAY rectangle on the rear end of near engine to purple body color, with white separation outline. Engines INCLUDING exhaust and intake use purple, NEVER gray. Gear struts use purple. Keep exactly TWO near-side nacelles.",
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          174,
+          376,
+          296,
+          438
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "CRJ7": {
+      "representative": "Bombardier CRJ700, 32.51m, slender narrow fuselage, low wing with winglets, two aft fuselage-mounted engines total; only near nacelle side visible. T-tail",
+      "file": "CRJ7.png",
+      "sha256": "e0b32599fb6f62184c198c18e795bb71d4167cf74d21bb96070ca25a02954149",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Bombardier CRJ700, 32.51m, slender narrow fuselage, low wing with winglets, two aft fuselage-mounted engines total; only near nacelle side visible. T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Bombardier CRJ700. Paired tires on single-axle main gear, one main face visible. Much smaller paired nose wheel face. Preserve original CRJ strut/door arrangement, solid compact brake-bearing main hub versus plain unbraked nose hub. All wheel tire and solid hub fill #7845a4. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          111,
+          351,
+          226,
+          391
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "CRJ9": {
+      "representative": "Bombardier CRJ900, 36.37m, longer slim fuselage than CRJ700, low swept wing/winglets, two aft fuselage-mounted engines total; only near nacelle side visible. T-tail",
+      "file": "CRJ9.png",
+      "sha256": "9682a9d9659cad8e7608543a5b5e44862c46460b8949d41c0eb677909a855c52",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Bombardier CRJ900, 36.37m, longer slim fuselage than CRJ700, low swept wing/winglets, two aft fuselage-mounted engines total; only near nacelle side visible. T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Bombardier CRJ900. Single-axle twin-wheel main gear, one main wheel face, smaller nose wheel face in strict side view. Solid recessed main hub with small axle cap, simple unbraked nose cap, compact relief. No generic star. All wheel tire and solid hub fill #7845a4. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          119,
+          352,
+          230,
+          383
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    },
+    "F100": {
+      "representative": "Fokker 100, 35.53m, rounded blunt nose, low swept wing WITHOUT winglet, two aft fuselage-mounted engines; only near nacelle side visible. T-tail",
+      "file": "F100.png",
+      "sha256": "0992a275c9fbe7cb0327c5fc65c62cc5386fe4b6bcca062f5f74fb29944ec651",
+      "projection_prompt": "Use case: precise-object-edit. Image 1 is the aircraft geometry edit target. Image 2 is ONLY the initial FlightAtlas visual style reference: copy its clean WHITE contours and simple flat finish, NOT its aircraft types or perspectives. Keep Image1's strict left orthographic side profile, horizontal fuselage, model proportions, wings/winglets, engines, gray cockpit and genuine landing gear. CORRECT the dorsal and ventral fuselage silhouette: remove ALL generated antenna-like spikes, shark fins and little triangular projections from the fuselage roof and belly; the simplified family icon intentionally omits minor antennas instead of guessing them. Do NOT create a far-side winglet standing up separately on the fuselage roof. Real near winglets, vertical fin, propeller edge-on blade and landing gear must stay. Smooth main fuselage outline, with only actual large wing-root/gear fairings. Restore clear pure WHITE #FFFFFF outline around fuselage, wings, tail, engine nacelles, doors and gear, matching initial reference stroke strength, approximately 3px at 2000px aircraft length. Wing/engine boundary must remain plainly visible; no faint beige, gray or colored contour. Solid flat BODY COLOR over fuselage, filled wings, engines AND intake rims/faces, no gradients, shadows, metallic detail or dirty artifacts. Tiny white cabin windows; cockpit glass neutral #858585, body-colored wheels with white hub rim like initial reference. Simplified coherent editorial 2D art, not a photorealistic recolor. Preserve full aircraft, margins and TRUE TRANSPARENT alpha, remove colored edge fringe. No logos or text.\nAircraft geometry must match: Fokker 100, 35.53m, rounded blunt nose, low swept wing WITHOUT winglet, two aft fuselage-mounted engines; only near nacelle side visible. T-tail. Solid body paint #7845a4.",
+      "wheel_edit_prompt": "Use case: precise-object-edit. Image 1 is the FlightAtlas icon EDIT TARGET. Change ONLY landing gear wheel assemblies and wheel hub detail. Preserve all other aircraft geometry, gray cockpit, fuselage, filled wings, engines and WHITE contours exactly. Keep horizontal LEFT orthographic side elevation, transparent alpha, no perspective, no new fuselage spikes. Wheel tires AND solid filled hub faces must use the exact fuselage color, NOT black or gray. Keep thin white rim, central axle cap and subtle real construction rings/tie-bolt relief, NOT hollow hub holes, car-style spokes, universal stars or decorative textures. Nose hub is unbraked and simpler than main braked hub. Structural simplification at report icon scale is intentional; do not invent exact bolt/hole counts. References beyond Image 1 are engineering/photo evidence ONLY for landing gear, never copy their background, labels or colors. Full aircraft unchanged in frame, no text. Fokker100. Single-axle paired main tires, one main tire face visible, smaller nose face. Compact braked main wheel solid flange and center cap; plain unbraked nose face. Preserve aft engine/T-tail and NO winglet. All wheel tire and solid hub fill #7845a4. Keep gear proportionate, not enlarged. Image2 shows basic aircraft wheel construction ONLY, not model-specific bolt counts. Do not invent repeated star spokes or dark/hollow hub center.",
+      "visual_review": {
+        "date": "2026-10-04",
+        "method": "manual inspection of per-asset output and report-filtered contact sheet",
+        "scope": "side-facing silhouette, white contours/windows, uniform group body fill including gear and engines; correct cockpit mask treatment",
+        "limits": "Not automated geometric certification; unverified hub vendor details omitted."
+      },
+      "palette_review": {
+        "audit": "palette-audit.json",
+        "alpha_unchanged": true,
+        "body_rgb": [
+          120,
+          69,
+          164
+        ],
+        "cockpit_box": [
+          120,
+          388,
+          226,
+          432
+        ],
+        "neutral_pixels_outside_cockpit": 0
+      }
+    }
+  },
+  "palette_normalization": {
+    "authorization": "Explicit user approval for programmatic color normalization",
+    "method": "scripts/normalize_aircraft_palette.py, developer-only deterministic color normalization",
+    "audit": "palette-audit.json",
+    "body_colors": {
+      "AB": [
+        120,
+        69,
+        164
+      ],
+      "CD": [
+        22,
+        92,
+        145
+      ],
+      "EF": [
+        194,
+        131,
+        22
+      ]
+    },
+    "mask_profiles": [
+      "A350",
+      "A339"
+    ],
+    "no_mask_profile": "C919",
+    "prompt_mode": "OpenAI built-in image editing, followed by user-approved deterministic color normalization"
+  }
+}

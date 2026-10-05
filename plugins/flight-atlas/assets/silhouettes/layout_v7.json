@@ -1,0 +1,310 @@
+{
+  "JS41": {
+    "file": "JS41.png",
+    "width": 1774,
+    "height": 887,
+    "viewBox": [
+      15,
+      140,
+      1745,
+      599
+    ]
+  },
+  "B737": {
+    "file": "B737.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      17,
+      27,
+      2155,
+      661
+    ]
+  },
+  "B38M": {
+    "file": "B38M.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      8,
+      11,
+      2159,
+      644
+    ]
+  },
+  "A320": {
+    "file": "A320.png",
+    "width": 1920,
+    "height": 819,
+    "viewBox": [
+      25,
+      78,
+      1871,
+      621
+    ]
+  },
+  "A20N": {
+    "file": "A20N.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      24,
+      24,
+      2126,
+      665
+    ]
+  },
+  "B752": {
+    "file": "B752.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      18,
+      70,
+      2140,
+      580
+    ]
+  },
+  "BCS3": {
+    "file": "BCS3.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      21,
+      46,
+      2134,
+      616
+    ]
+  },
+  "C919": {
+    "file": "C919.png",
+    "width": 2014,
+    "height": 780,
+    "viewBox": [
+      32,
+      66,
+      1982,
+      597
+    ]
+  },
+  "AJ27": {
+    "file": "AJ27.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      34,
+      64,
+      2112,
+      549
+    ]
+  },
+  "E195": {
+    "file": "E195.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      15,
+      89,
+      2153,
+      544
+    ]
+  },
+  "DH8D": {
+    "file": "DH8D.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      1,
+      62,
+      2134,
+      565
+    ]
+  },
+  "B777": {
+    "file": "B777.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      25,
+      105,
+      2125,
+      508
+    ]
+  },
+  "B787": {
+    "file": "B787.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      22,
+      60,
+      2131,
+      560
+    ]
+  },
+  "A330": {
+    "file": "A330.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      7,
+      76,
+      2161,
+      530
+    ]
+  },
+  "A350": {
+    "file": "A350.png",
+    "width": 2167,
+    "height": 726,
+    "viewBox": [
+      22,
+      78,
+      2115,
+      541
+    ]
+  },
+  "B747": {
+    "file": "B747.png",
+    "width": 2048,
+    "height": 768,
+    "viewBox": [
+      29,
+      79,
+      1990,
+      569
+    ]
+  },
+  "A339": {
+    "file": "A339.png",
+    "width": 2016,
+    "height": 780,
+    "viewBox": [
+      17,
+      102,
+      1964,
+      521
+    ]
+  },
+  "A340": {
+    "file": "A340.png",
+    "width": 1754,
+    "height": 897,
+    "viewBox": [
+      24,
+      196,
+      1717,
+      462
+    ]
+  },
+  "A380": {
+    "file": "A380.png",
+    "width": 1983,
+    "height": 793,
+    "viewBox": [
+      23,
+      42,
+      1938,
+      642
+    ]
+  },
+  "B767": {
+    "file": "B767.png",
+    "width": 2148,
+    "height": 732,
+    "viewBox": [
+      19,
+      43,
+      2101,
+      612
+    ]
+  },
+  "E170": {
+    "file": "E170.png",
+    "width": 1774,
+    "height": 887,
+    "viewBox": [
+      26,
+      124,
+      1738,
+      591
+    ]
+  },
+  "E290": {
+    "file": "E290.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      31,
+      54,
+      2084,
+      572
+    ]
+  },
+  "AT42": {
+    "file": "AT42.png",
+    "width": 1946,
+    "height": 808,
+    "viewBox": [
+      45,
+      74,
+      1870,
+      640
+    ]
+  },
+  "AT72": {
+    "file": "AT72.png",
+    "width": 2087,
+    "height": 754,
+    "viewBox": [
+      24,
+      75,
+      2041,
+      575
+    ]
+  },
+  "BA46": {
+    "file": "BA46.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      42,
+      38,
+      2050,
+      598
+    ]
+  },
+  "CRJ7": {
+    "file": "CRJ7.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      7,
+      95,
+      2164,
+      493
+    ]
+  },
+  "CRJ9": {
+    "file": "CRJ9.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      18,
+      108,
+      2152,
+      475
+    ]
+  },
+  "F100": {
+    "file": "F100.png",
+    "width": 2172,
+    "height": 724,
+    "viewBox": [
+      39,
+      108,
+      2108,
+      514
+    ]
+  }
+}

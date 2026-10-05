@@ -1,0 +1,655 @@
+{
+  "revision": "2026-10-04-flat-palette",
+  "authorization": "Explicit user approval for programmatic color normalization",
+  "body_colors": {
+    "AB": [
+      120,
+      69,
+      164
+    ],
+    "CD": [
+      22,
+      92,
+      145
+    ],
+    "EF": [
+      194,
+      131,
+      22
+    ]
+  },
+  "white": [
+    255,
+    255,
+    255
+  ],
+  "glass": [
+    133,
+    133,
+    133
+  ],
+  "black": [
+    0,
+    0,
+    0
+  ],
+  "antialiasing": "Original alpha unchanged; internal white-edge coverage retained",
+  "assets": {
+    "JS41": {
+      "file": "JS41.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        189,
+        420,
+        280,
+        480
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "9ee420eaeda3d69145a12ea284d3fd5d30f3eacb36a4598e72c1841a9462513b",
+      "source_sha256": "9ce5d666758b33f7c38f42c7d4534a8216a68ce872f5f5a30ab8f29fd2a8e0ef",
+      "sha256": "9a3a43239b45182d3a8ed1936f9ace9371e0d7dbdbaf2f631987294ecfb9b76d",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 291766
+    },
+    "B737": {
+      "file": "B737.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        108,
+        427,
+        206,
+        468
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "f69d70a2b9d3c7442b4d6eb9873b220f12ea6be8c8c017811f56ec3e13e18e71",
+      "source_sha256": "2eff3f2e8bac80a3d5cb7d3f0788cde90c46efaeec7c044325bb8dc4ed95addf",
+      "sha256": "e5e12292c69f93d0e0f314c7f24a8bf26863684f6c9b65da8aa63c40cfec8825",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 425779
+    },
+    "B38M": {
+      "file": "B38M.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        90,
+        408,
+        186,
+        445
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "245d79aeb9190aea241d0d07026628f342977ab9f09f15155958e76faf6a7127",
+      "source_sha256": "76e317d98f1aec657729be4e980ad67a94583fe9f57477d0234d9afedabd4888",
+      "sha256": "ed1087b0e6abecfa210d3ef72bda2e5a6f0b8a4da8106d3129647e97feff90a7",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 419938
+    },
+    "A320": {
+      "file": "A320.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        101,
+        431,
+        196,
+        469
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "f28bb0fe94340769013f04cfe06780664b1d686408710e5dd653794060ca53ac",
+      "source_sha256": "58533d0a7e27329339f8191f4be0606c67c0b13eaef33e645b2187bfb11250a9",
+      "sha256": "4454caf94aa5eee7c33eed492ca5344b27471d67202f5e202a92dc2a1a6b66d3",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 379165
+    },
+    "A20N": {
+      "file": "A20N.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        108,
+        397,
+        214,
+        439
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "b281097f539c3345de6455c5711072da2e8e1d01674f931d856e236921797853",
+      "source_sha256": "72d0d1bf04a92154b7b3ec6e24b460a24a8777a3655d2d3db91464da040fbdf4",
+      "sha256": "6a19c3a19c9aebe8321ff54da7a102776bee4e84038b4a0e15bc1789163d37da",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 453971
+    },
+    "B752": {
+      "file": "B752.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        78,
+        416,
+        170,
+        454
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "0df3b8feca65e6774d082e4244d3c9ff2fe3de6c8c3a5cac8e0a4f507f5267b4",
+      "source_sha256": "61fc21e1389ede3d4f92e6b04cb4049fc1bc7caa1aa3bc7839e2f6b331cd82bf",
+      "sha256": "aa0eda6e3ec47a9ed71528776ff8aea8f03e10db300416a4eb49dbbb0c36002e",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 371772
+    },
+    "BCS3": {
+      "file": "BCS3.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        94,
+        404,
+        197,
+        445
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "87c3ecfbd0ddd6c51b65f7ed90eafcfc7074d87d99834b4df13a190fda03e701",
+      "source_sha256": "ff617ca46ee527d51b21b74a81b68a88a712212fadb98a1629e6a4e2b7a4db1d",
+      "sha256": "789f8a5ce14fd2b6796a26704dffd1adcd8d8374e3bf2a9177b65d20cbcc1112",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 406810
+    },
+    "C919": {
+      "file": "C919.png",
+      "group": "CD",
+      "body_rgb": [
+        22,
+        92,
+        145
+      ],
+      "cockpit_box": [
+        86,
+        420,
+        192,
+        462
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "4ad4f0c2ff5dfc167fcf7f7e869a8becada4831e37ee12c91a88b42c03a4167b",
+      "source_sha256": "4240ddb864848e6788afd7ce49ca86028a43a701cc243f9cbcd438c25e47dbd7",
+      "sha256": "3f1c9b8a3eb665388073d5e310358f4809499ef9d7f9332e59e59570566d725b",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 373899
+    },
+    "AJ27": {
+      "file": "AJ27.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        143,
+        353,
+        247,
+        404
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "f6dcfca249cbdd861916e3abb040880123cfd54db999823e7293b4da75544e31",
+      "source_sha256": "dcafbac797c374634f4b4a4595c132f6434a82fcad743a6dfb8d907141168764",
+      "sha256": "28ce5c5c24f66c940253298862ab64c8f370f15999cf48b74e832a7814f6b0c4",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 386186
+    },
+    "E195": {
+      "file": "E195.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        102,
+        391,
+        194,
+        433
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "96fe47ccc4a58f0599a464bb922191fca0322bb423a25d473909982a216f13f2",
+      "source_sha256": "a50b264ce3236a7986a9c00f514c1381b42f50e872029fb8e13dcd805a288bb5",
+      "sha256": "d166115109e1f1c632fa9415943cdfb7ee28b24e6bf16d27d6c507a8a83988c2",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 342994
+    },
+    "E170": {
+      "file": "E170.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        116,
+        451,
+        220,
+        492
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "b55274dbb363f1cb018569ca60634aee43fc629770970fba081507c5c523199d",
+      "source_sha256": "e8a102a67adca35c8fe0979da0eb605653db90431e4193e6f9f29b81a6126c33",
+      "sha256": "213cf5423403b0c38a1a6a0747b189279a064d3354edbbd4894648d815fa5a55",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 317281
+    },
+    "E290": {
+      "file": "E290.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        122,
+        368,
+        216,
+        410
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "bb721f14f032e4ed6a696a0cbb3cf3303d6ee7eacc2a17d9bfbaca138b9b2ae9",
+      "source_sha256": "e800fa1f4c2ec0135f9ab6efbd0b33366ff0580c50f4363fb0ca31f3ab453f65",
+      "sha256": "c7aaac045dbb8321b8967549d2bd9d8c263216ae149fc79e19aea86adb8bc272",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 368421
+    },
+    "DH8D": {
+      "file": "DH8D.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        105,
+        399,
+        222,
+        441
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "3171982a495604816a27a945ed9b97b3e6a95179274a7511c4d9723df9e28c79",
+      "source_sha256": "c8c2fa975816be451eb33e144ae9ffce93b5c3b0b8265970b7d07be8529a55ed",
+      "sha256": "ab91c9faa3fdf1b9f15ecd3f4517e14e0acd9fd05fa0c66b944c318516f3a2c5",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 350149
+    },
+    "AT42": {
+      "file": "AT42.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        165,
+        461,
+        298,
+        512
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "0171fb7f793f22f813aecce434f69262a2fc3dddac51dce83294c529f7ab1ec4",
+      "source_sha256": "e49c1b1936b0839035506712311e4da003d85e05857226ac67f67c2396c03f36",
+      "sha256": "eacb0b6792d5d251df6e917601e55e26f722d5e672bd38f87398fb26f8eb70eb",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 381388
+    },
+    "AT72": {
+      "file": "AT72.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        113,
+        413,
+        224,
+        458
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "46f93f1fc1cc07da2bd4c0bd2a6b8b2f47998c6dc516045c8b3f3d630c4b961a",
+      "source_sha256": "ca1bc7e90ad7655f8b85a4a69ddc26c6891f526ea7f893ba22670e4fdff8cd72",
+      "sha256": "b58ed1f7ebb851c7365b5d3bb668c1459cc9a77db252165423d50b0905ec6a64",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 382168
+    },
+    "BA46": {
+      "file": "BA46.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        174,
+        376,
+        296,
+        438
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "ecb00667d74579780e3ab92477038cbabcd9342d1e12454c4e6e381df74b3b8a",
+      "source_sha256": "00634ec457fd324aedc7fc94d7bd6a5365713482cf26819364a2b6db4add3152",
+      "sha256": "e278978b223cca94bc121beee164e9407613cc74091f94069693f3af9093d19e",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 416611
+    },
+    "CRJ7": {
+      "file": "CRJ7.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        111,
+        351,
+        226,
+        391
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "28cd9c04b7e95aca83560346c5771d09667103fc5b600d4f8234ccccc7ac75c7",
+      "source_sha256": "fb6831fb886c2b1553a6f807950dd1e7074a18b79b3452fbedb20188ca8fe5b7",
+      "sha256": "e0b32599fb6f62184c198c18e795bb71d4167cf74d21bb96070ca25a02954149",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 312699
+    },
+    "CRJ9": {
+      "file": "CRJ9.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        119,
+        352,
+        230,
+        383
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "1c772bd9165779c356c2b12f9d2974fc7081d99a1d22b8876b020611e4dd881e",
+      "source_sha256": "3c7e78c1e30903d2d22177929f52d3ea05145000ab9da5632a8e7937b28f9d94",
+      "sha256": "9682a9d9659cad8e7608543a5b5e44862c46460b8949d41c0eb677909a855c52",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 299057
+    },
+    "F100": {
+      "file": "F100.png",
+      "group": "AB",
+      "body_rgb": [
+        120,
+        69,
+        164
+      ],
+      "cockpit_box": [
+        120,
+        388,
+        226,
+        432
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "fc909e858a04e5adb48acd8f469074c163e25e57c6221fdb51e855fe20e00373",
+      "source_sha256": "8c26a8d0ce5ae503dff5e57ffdfc2546fd8fbdc0117f8d814d21b06d239adc7d",
+      "sha256": "0992a275c9fbe7cb0327c5fc65c62cc5386fe4b6bcca062f5f74fb29944ec651",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 335655
+    },
+    "B777": {
+      "file": "B777.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        62,
+        414,
+        122,
+        441
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "d1034389834639ae7aa0bfbf6c94fc9ec2b870a0fff4dbcb1dbf7adb610fb789",
+      "source_sha256": "376e89becc84e89be6ed07657964769109236ce11bec61e79a6640c26ef9819a",
+      "sha256": "b87cd4a2d1ea12b877c5f993b65894f6bc205ae5ee286da8d20514a182c970b3",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 335427
+    },
+    "B787": {
+      "file": "B787.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        75,
+        405,
+        145,
+        435
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "920ccd9c3c01ea38bbfce2b103f751381bc4dd5e2604159865493f3bafd78276",
+      "source_sha256": "bc2c300bbcec6a0e765419e61c3df7a0b0215d40eb9e53e01668a36b980296b8",
+      "sha256": "f280f440c24e5aa2509fe8f0098f9c55560be914877b6fc70cb0e19c46daa2f1",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 398466
+    },
+    "A330": {
+      "file": "A330.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        54,
+        383,
+        134,
+        413
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "bcc529e44da032f4a9de4f8ac85c7cee9d9f3dfcf72550f28c331f25318cd54d",
+      "source_sha256": "cb3dfe877162d7afb2c8529dce38d179f79cbc6a789bcedbc880b2b6fc3c174a",
+      "sha256": "90161f485b224fea7c4277f149988deb7eb8be6c7185dedb1be58895d113da2a",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 374018
+    },
+    "A339": {
+      "file": "A339.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        58,
+        417,
+        131,
+        448
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "534d3f4d8a097f825040a7a9ecf76041fa89dd7325336d61dbf9468cf698406b",
+      "source_sha256": "47a5a7e6ef425d0ff6d86077c670d59646065b201a7a0252c066c385feb8405f",
+      "sha256": "3e1eddc24345eb45e8bba25fea79b3373c567739ad61ec41a2655dfd35796761",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 314429
+    },
+    "A340": {
+      "file": "A340.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        66,
+        478,
+        129,
+        503
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "d4a9806af4577f29e933da01938a2d6639c6ce3016e5331c22ea8f4a3e40f701",
+      "source_sha256": "18a4270bf40aa9ff56f119c3d8f1b56c0a3b9526df41ff2cf32774f52c01be18",
+      "sha256": "0f8c835c6e0ad15f1db13c2e03d494c14295eca763525651824848c3e5b53d3c",
+      "filled_window_interiors": 49,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 234976
+    },
+    "B767": {
+      "file": "B767.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        68,
+        417,
+        151,
+        453
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "3a58b21ed7cf576a5fb27e7c618de6e1519bdfb54c032b2664edfddb70936a48",
+      "source_sha256": "a6ae0e1db0c7ec95fae3e72d36d71414826d6f73111a2c8ec2682afe35102947",
+      "sha256": "f9244b96a3dae5858c81e2c6887f1cce8c411a472f7f9052880830aa330033b8",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 395054
+    },
+    "A350": {
+      "file": "A350.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        78,
+        391,
+        147,
+        425
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "c6c4e8f89363215113b4990f19323ec19d2ed214daefb7fe9b8b0fb89050c4d3",
+      "source_sha256": "377fcaec865702853d743db88e5d950bd7fcb3a663a6450739294ae1c39e5cd2",
+      "sha256": "f094fd20cff896101d20d4a84e4998b65338edf1720a9590a984e068cf29b1bd",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 359792
+    },
+    "B747": {
+      "file": "B747.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        157,
+        371,
+        218,
+        397
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "bbc17d0ff07c944112fb003ec86f5ed8aa885401fd6105ef3a7a8be83d0bf1d6",
+      "source_sha256": "fdfd0aba900196a09ae3c8194ac50133a795bb260942f502114add4a29c7ca53",
+      "sha256": "eaa032b15624dfa83d1ff5c0d93ef6c0266c8839c20d94edb32ca4c37d556df7",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 374169
+    },
+    "A380": {
+      "file": "A380.png",
+      "group": "EF",
+      "body_rgb": [
+        194,
+        131,
+        22
+      ],
+      "cockpit_box": [
+        75,
+        469,
+        139,
+        496
+      ],
+      "alpha_unchanged": true,
+      "alpha_sha256": "0aa5ab0a3231b19d0c042b78ef89dc13eeb1a124519cb4397abdda0d190aff9c",
+      "source_sha256": "9873f01a416bbc33027715636b9feaf91453a198c9b4a281d797a059318fa069",
+      "sha256": "f9d9c350b3bbb2659e60f493be37a5ee082d4595caa2094765b5159c8246e0af",
+      "filled_window_interiors": 0,
+      "neutral_pixels_outside_cockpit": 0,
+      "body_pixels": 410873
+    }
+  }
+}

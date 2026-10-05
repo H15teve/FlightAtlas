@@ -1,0 +1,11 @@
+{
+  "name": "flightatlas-local",
+  "interface": {"displayName": "FlightAtlas Local"},
+  "plugins": [{
+    "name": "flight-atlas",
+    "interface": {"displayName": "FlightAtlas"},
+    "source": {"source": "local", "path": "./plugins/flight-atlas"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+    "category": "Productivity"
+  }]
+}

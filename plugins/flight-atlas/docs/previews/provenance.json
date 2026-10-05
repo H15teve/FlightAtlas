@@ -1,0 +1,111 @@
+{
+  "kind": "synthetic randomized demonstration",
+  "records": 240,
+  "original_row_fields_copied": [],
+  "source_information_used": "noisy aircraft-model frequencies only",
+  "photos_note": "Real licensed aircraft photos illustrate layout only; fictional DEMO registrations and lifecycle labels do not identify the pictured aircraft.",
+  "report_images_license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "assets": {
+    "CA": {
+      "title": "Air China wordmark.svg",
+      "source": "https://commons.wikimedia.org/wiki/File:Air_China_wordmark.svg",
+      "credit": "Air China Limited",
+      "license": "Public domain + CC0-1.0",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Air_China_wordmark.svg",
+      "sha256": "0b4b9725042d43bdd831455b4701a527e4a6170691da23ec4dd1a43acf229e8b",
+      "variant": "complete horizontal symbol + original wordmark",
+      "components": [
+        {
+          "source": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/airchina.svg",
+          "credit": "Simple Icons contributors",
+          "license": "CC0-1.0",
+          "license_url": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/LICENSE.md",
+          "sha256": "8d2da3e2f4f702bf63b4f3928ef973daf32e0a47539f7406efde9394d8bf08f1"
+        }
+      ],
+      "composition_note": "Air China red symbol; China Southern blue tail and red kapok; British Airways navy wordmark with red/blue speedmarque. Original path geometry retained, no symbol cropping. These are licensed-component compositions, not certified official lockup proportions.",
+      "composition_sha256": "e22b5669cfa2581d7cae9eb14f8f1edba1d7a0b8bae970fbe996cd0b2ebcc0b5",
+      "demo_exception": {
+        "scope": "public-readme-demo",
+        "selected_variant": "English AIR CHINA wordmark with phoenix symbol",
+        "user_approved": true,
+        "affects_user_report_selection": false
+      }
+    },
+    "CZ": {
+      "title": "China Southern Airlines wordmark logo.svg",
+      "source": "https://commons.wikimedia.org/wiki/File:China_Southern_Airlines_wordmark_logo.svg",
+      "credit": "China Southern Air Holdings",
+      "license": "Public domain + CC0-1.0",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/52/China_Southern_Airlines_wordmark_logo.svg",
+      "sha256": "f85afede710a80234ff489defebefe0e5cb091fab8b094ac54c9881593f437cc",
+      "variant": "complete horizontal symbol + original wordmark",
+      "components": [
+        {
+          "source": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/chinasouthernairlines.svg",
+          "credit": "Simple Icons contributors",
+          "license": "CC0-1.0",
+          "license_url": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/LICENSE.md",
+          "sha256": "0220a76ead1cd27f192bc111cfc1b8a2143a60ab63782015e2581277bac890b7"
+        }
+      ],
+      "composition_note": "Air China red symbol; China Southern blue tail and red kapok; British Airways navy wordmark with red/blue speedmarque. Original path geometry retained, no symbol cropping. These are licensed-component compositions, not certified official lockup proportions.",
+      "composition_sha256": "490f3553f4ec766587ac82cea4f0a669ef584967fb764d2389497e09269f975f"
+    },
+    "TK": {
+      "title": "Turkish Airlines logo 2012.svg",
+      "source": "https://commons.wikimedia.org/wiki/File:Turkish_Airlines_logo_2012.svg",
+      "credit": "Turkish Airlines",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Turkish_Airlines_logo_2012.svg",
+      "sha256": "756eddabf836653143f08043ef256aae61689e126bd7bce1787ae632db51b1f0"
+    },
+    "BA": {
+      "title": "BRITISH AIRWAYS logo.svg",
+      "source": "https://commons.wikimedia.org/wiki/File:BRITISH_AIRWAYS_logo.svg",
+      "credit": "British Airways Plc.",
+      "license": "Public domain + CC0-1.0",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/0/06/BRITISH_AIRWAYS_logo.svg",
+      "sha256": "9e7c5e0fceb0ff8152e816d2789ea08a1628724dd3c6be52469ef2814e648f61",
+      "variant": "complete horizontal symbol + original wordmark",
+      "components": [
+        {
+          "source": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/icons/britishairways.svg",
+          "credit": "Simple Icons contributors",
+          "license": "CC0-1.0",
+          "license_url": "https://github.com/simple-icons/simple-icons/blob/98820a4dc8c363ca72fa2c0d294ea4a0a9bba75d/LICENSE.md",
+          "sha256": "941ff8a101b01aba08b004a923ad6f02e11787946102a11566d9e0aee9a6f725"
+        }
+      ],
+      "composition_note": "Air China red symbol; China Southern blue tail and red kapok; British Airways navy wordmark with red/blue speedmarque. Original path geometry retained, no symbol cropping. These are licensed-component compositions, not certified official lockup proportions.",
+      "composition_sha256": "64c6642933e99623bc830711a278a46b70bc0c921ea1959643672a24565f9bf7"
+    },
+    "featured": {
+      "title": "B-5214 Boeing 737 Air China (7183135231).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:B-5214_Boeing_737_Air_China_%287183135231%29.jpg",
+      "credit": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/51/B-5214_Boeing_737_Air_China_%287183135231%29.jpg",
+      "sha256": "ed3b25707fa3c73190b51ec548519fe64d847f5c75b568ff08b8186701d76328"
+    },
+    "retired": {
+      "title": "B-5217 Boeing 737 Air China (7183107141).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:B-5217_Boeing_737_Air_China_%287183107141%29.jpg",
+      "credit": "Aeroprints.com",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/3/3c/B-5217_Boeing_737_Air_China_%287183107141%29.jpg",
+      "sha256": "05a77fa72ad3d3375c43fa0469cb651e0c3a14b1cf01e3ebe4b163d6e12c9fc4"
+    }
+  },
+  "images": {
+    "flight-atlas.png": "4f0c9b9870f0cf89a07b701387e9bd8a0f24a4fa82421362627d26c5eb459f74",
+    "flight-passport.png": "e0c00098adeca40743ce58d2d8cc80cb38cb8e095264a4cbf8f0b613dca95f87"
+  }
+}

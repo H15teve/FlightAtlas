@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "flight-atlas",
+  "version": "0.1.0",
+  "description": "Local FlightAtlas passport and flight statistics from Umetrip spreadsheets, with built-in aircraft art and opt-in TPM lookup.",
+  "author": {"name": "FlightAtlas contributors"},
+  "license": "MIT",
+  "keywords": ["flight report", "Umetrip", "航旅纵横", "passport", "local-first"]
+}

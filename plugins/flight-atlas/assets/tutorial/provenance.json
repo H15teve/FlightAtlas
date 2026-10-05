@@ -1,0 +1,37 @@
+{
+  "checked_on": "2026-10-05",
+  "source": "User-provided Umetrip tutorial screenshots",
+  "method": "Built-in image editing; annotated instructional copies, not pixel-identical captures. Entry labels visually checked against originals.",
+  "rights": "User requested inclusion in this tutorial. Underlying APP interface, advertising art and marks remain their owners' materials; no universal MIT license or endorsement is asserted.",
+  "originals_in_distribution": false,
+  "assets": [
+    {
+      "file": "01-me-all.png",
+      "source_file": "e0c58f8bcdbabbb3047d2b42b3b907a2.jpg",
+      "source_sha256": "00d69410111dcf389d826db052571abf7bdb944b8fc44790bb99d4f1a21c8f32",
+      "sha256": "eb8ef89db061f21d2504b29522defcadf93d8a15825786e035c897e7190553c1",
+      "edit": "Orange outlines and navy badges 1 and 2 on 我 and 全部; tutorial callout 我 → 全部."
+    },
+    {
+      "file": "02-services.png",
+      "source_file": "7667b1e34d964dabde69b0268b376ed7.jpg",
+      "source_sha256": "8ac1e805b93895a007132382a66ef9567f54c12811fe4b1aabe13af26708e1f4",
+      "sha256": "4060a59a46c7c584d70d9dc0c7179fe80ed68807df3f7a0923a5a6ff84048f75",
+      "edit": "Orange outlines and navy badges 3 and 4 on 特色服务 and 小横智能助手."
+    },
+    {
+      "file": "03-chat.png",
+      "source_file": "3feadcd27de96191b5824045989f3d0f.jpg",
+      "source_sha256": "b05bbdde6527ab2a7229ff282aa23e36f9f80acbb922ddc7bc9f2c3c16554c88",
+      "sha256": "e4a6da9c12487a072d3af8adb8ae882959380a15554e5a7dc36e91244133b460",
+      "edit": "Outlined input with step 5, 粘贴提取提示词, and keep-screen-on advice."
+    },
+    {
+      "file": "04-xls.png",
+      "source_file": "61df8f15ed965366eb6c70adb753b4d1.jpg",
+      "source_sha256": "d3f3f1674d14d9add12ee8677684914cbab787813a3904803d6ce36c25a6001d",
+      "sha256": "852f43a2e9824c0ba9917955731381766e0631348d2ccf95115f50cc1c7989c5",
+      "edit": "Outlined ellipsis/export entry and 辅助数据：导出 XLS callout. Lower account-specific ticket count excluded by crop."
+    }
+  ]
+}

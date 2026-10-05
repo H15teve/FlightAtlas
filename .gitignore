@@ -1,0 +1,16 @@
+.local/
+dist/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.xlsx
+*.xls
+!tests/fixtures/*.csv
+reports/
+.pytest_cache/
+*.egg-info/
+.run-jitter-salt
+flight-history.json
+report-config.json
+increment-audit.json

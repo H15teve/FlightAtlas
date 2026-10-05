@@ -1,0 +1,9 @@
+{
+  "checked_on": "2026-10-05",
+  "trademark_notice": "Identification only. No affiliation or endorsement; copyright permission does not grant trademark rights.",
+  "assets": {
+    "star": {"file":"star_vertical.svg","source":"https://commons.wikimedia.org/wiki/File:Star_Alliance_Logo.svg","credit":"Star Alliance; Commons original upload attribution GDilemma / Jovianeye / Fry1989","license":"PD-textlogo according to Wikimedia Commons file page; trademark restrictions remain","license_url":"https://commons.wikimedia.org/wiki/File:Star_Alliance_Logo.svg#Licensing","changes":"Original template version: symbol above name, original path artwork retained","sha256":"c564db9bc405ec07195e4634263a568809ade276dbb15b1c5dd3724b102dba6c"},
+    "skyteam": {"file":"skyteam.svg","source":"https://commons.wikimedia.org/wiki/File:Skyteam_Logo_Alliance.svg","credit":"Väsk (source author credited by Commons); Commons uploader Josh0108","license":"CC BY 2.5","license_url":"https://creativecommons.org/licenses/by/2.5/","changes":"Removed neutral black matte paths; converted blue trace antialias colors to navy and opacity without changing blue path geometry; developer script scripts/prepare_skyteam_svg.py","source_sha256":"2638ea2c0f55124a22a66174959d51b1c5c77133dde655bd826b9a736d4efb6c","sha256":"a980bb58f75851f25c948b66f08f88df49ea498e7c8ec03ffc22dcb23a3aa4d2"},
+    "oneworld": {"file":"oneworld.svg","source":"https://commons.wikimedia.org/wiki/File:Oneworld_Logo.svg","credit":"Oneworld mark; author unidentified on Commons file page","license":"PD-textlogo according to Wikimedia Commons file page; trademark restrictions remain","license_url":"https://commons.wikimedia.org/wiki/File:Oneworld_Logo.svg#Licensing","changes":"None; licensed visually corresponding replacement for template Logo.wine file","sha256":"9f53850a580759769ba61dc8f056bf3a01d431b490fd086c35751dbcb61fc29b"}
+  }
+}

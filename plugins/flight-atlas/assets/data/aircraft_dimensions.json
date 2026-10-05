@@ -1,0 +1,154 @@
+{
+  "pixels_per_metre": 9,
+  "families": {
+    "JS41": {
+      "length_m": 19.25,
+      "profile": "Jetstream 41",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B737": {
+      "length_m": 39.47,
+      "profile": "Boeing 737 NG",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B38M": {
+      "length_m": 39.52,
+      "profile": "Boeing 737 MAX",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A320": {
+      "length_m": 37.57,
+      "profile": "Airbus A320ceo",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A20N": {
+      "length_m": 37.57,
+      "profile": "Airbus A320neo",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B752": {
+      "length_m": 47.32,
+      "profile": "Boeing 757",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "BCS3": {
+      "length_m": 38.7,
+      "profile": "Airbus A220",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "C919": {
+      "length_m": 38.9,
+      "profile": "COMAC C919",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "AJ27": {
+      "length_m": 33.46,
+      "profile": "COMAC C909 / ARJ21",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "E195": {
+      "length_m": 38.65,
+      "profile": "Embraer E190",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "E170": {
+      "length_m": 29.9,
+      "profile": "Embraer E170",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "E290": {
+      "length_m": 36.24,
+      "profile": "Embraer E190-E2",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "DH8D": {
+      "length_m": 32.84,
+      "profile": "Dash 8",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "AT42": {
+      "length_m": 22.67,
+      "profile": "ATR 42",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "AT72": {
+      "length_m": 27.17,
+      "profile": "ATR 72",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "BA46": {
+      "length_m": 31.0,
+      "profile": "BAe 146",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "CRJ7": {
+      "length_m": 32.51,
+      "profile": "Bombardier CRJ700",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "CRJ9": {
+      "length_m": 36.37,
+      "profile": "Bombardier CRJ900",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "F100": {
+      "length_m": 35.53,
+      "profile": "Fokker F100",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B777": {
+      "length_m": 73.86,
+      "profile": "Boeing 777",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B787": {
+      "length_m": 62.81,
+      "profile": "Boeing 787",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A330": {
+      "length_m": 63.66,
+      "profile": "Airbus A330",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A339": {
+      "length_m": 63.66,
+      "profile": "Airbus A330neo",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A340": {
+      "length_m": 63.69,
+      "profile": "Airbus A340",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B767": {
+      "length_m": 54.94,
+      "profile": "Boeing 767",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A350": {
+      "length_m": 66.8,
+      "profile": "Airbus A350",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "B747": {
+      "length_m": 70.66,
+      "profile": "Boeing 747",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    },
+    "A380": {
+      "length_m": 72.72,
+      "profile": "Airbus A380",
+      "basis": "illustrative representative overall length, not a measured technical drawing"
+    }
+  },
+  "references": {
+    "Airbus": "https://www.airbus.com/en/products-services/commercial-aircraft",
+    "Boeing": "https://www.boeing.com/commercial",
+    "Embraer": "https://www.embraercommercialaviation.com/",
+    "ATR": "https://www.atr-aircraft.com/regional-mobility/regional-aircraft/",
+    "Fokker": "https://www.fokkerservicesgroup.com/media/emccsdnm/fsg_fokker-100.pdf"
+  },
+  "limits": "Profile art is fixed and approximate; not an engineering scale drawing. Other subtypes remain in count labels.",
+  "projection": "left orthographic side elevation; far-side engines may be hidden"
+}

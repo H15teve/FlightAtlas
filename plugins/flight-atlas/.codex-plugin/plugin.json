@@ -1,0 +1,9 @@
+{
+  "name": "flight-atlas",
+  "version": "0.1.0",
+  "description": "Local flight passport and statistics from Umetrip export files.",
+  "author": {"name": "FlightAtlas contributors"},
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {"displayName": "FlightAtlas", "shortDescription": "从航旅纵横表格生成本地飞行护照与统计报告", "brandColor": "#122478", "category": "Productivity"}
+}
